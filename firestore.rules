@@ -1,0 +1,258 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* =========================
+       Helpers: auth + perms
+    ========================= */
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function tokenPerms() {
+      return (signedIn() && request.auth.token.permissions is list)
+        ? request.auth.token.permissions
+        : [];
+    }
+
+    function has(p) {
+      return signedIn() && (tokenPerms().hasAny([p, "*"]));
+    }
+
+    function isSuperAdmin() {
+      return signedIn() && (
+        request.auth.token.superadmin == true ||
+        tokenPerms().hasAny(["superadmin:all", "*"])
+      );
+    }
+
+    function canRead(module) {
+      return isSuperAdmin()
+        || has(module + ":read")
+        || has(module + ":write");
+    }
+
+    function canWrite(module) {
+      return isSuperAdmin()
+        || has(module + ":write");
+    }
+
+    // Playlist songs are reused by Agenda (music picker), without granting access
+    // to the full Playlist admin section.
+    function canReadPlaylistSongs() {
+      return isSuperAdmin()
+        || canRead("playlist")
+        || canRead("agenda");
+    }
+
+    function canReadGuestDirectory() {
+      return isSuperAdmin()
+        || canRead("rsvp")
+        || canRead("emails")
+        || has("emails:send")
+        || canRead("agenda")
+        || canRead("menus_seating");
+    }
+
+
+    /* =========================
+       Users
+       (lecture: self ou superadmin)
+       (écriture: backend only)
+    ========================= */
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isSuperAdmin());
+      allow write: if false;
+    }
+
+    /* =========================
+       RSVP (admin UI lit en realtime)
+       Writes: backend only
+    ========================= */
+
+    match /rsvps/{rsvpId} {
+      allow read: if canRead("rsvp");
+      allow write: if false;
+    }
+
+
+    /* =========================
+       Guests
+       - root guests (nouvelle collection)
+       lecture via canReadGuestDirectory
+       writes: backend only
+    ========================= */
+
+    match /guests/{guestId} {
+      allow read: if canReadGuestDirectory();
+      allow write: if false;
+    }
+
+
+    /* =========================
+       Blog
+       Public read, backend only write
+    ========================= */
+
+    match /blogPosts/{id} {
+      allow read: if true;
+      allow write: if false;
+
+      match /likes/{likeId} {
+        allow read, write: if false;
+      }
+    }
+
+    /* =========================
+       Emails (admin only)
+       backend only write
+    ========================= */
+
+    match /emailMeta/{id} {
+      allow read: if canRead("emails");
+      allow write: if false;
+    }
+
+    match /emailJobs/{jobId} {
+      allow read: if canRead("emails");
+      allow write: if false;
+
+      match /logs/{logId} {
+        allow read: if canRead("emails");
+        allow write: if false;
+      }
+    }
+
+    /* =========================
+       Seating (tables + config)
+       lecture admin, writes backend only
+    ========================= */
+
+    match /seatingTables/{tableId} {
+      allow read: if canRead("menus_seating");
+      allow write: if false;
+    }
+
+    match /seatingPlanConfig/{docId} {
+      allow read: if canRead("menus_seating");
+      allow write: if false;
+    }
+
+    /* =========================
+       Superadmin-only collections
+    ========================= */
+
+    match /invites/{id} {
+      allow read, write: if isSuperAdmin();
+    }
+
+    match /auditLogs/{id} {
+      allow read, write: if isSuperAdmin();
+    }
+
+    /* =========================
+       Playlist
+       lecture selon perms, writes backend only
+    ========================= */
+
+    match /playlistSongs/{songId} {
+      allow read: if canReadPlaylistSongs();
+      allow write: if false;
+    }
+
+    /* =========================
+       Agenda
+       lecture selon perms, writes backend only
+    ========================= */
+
+    match /agendaItems/{itemId} {
+      allow read: if canRead("agenda");
+      allow write: if false;
+    }
+
+    /* =========================
+       Wedding planner
+       lecture selon perms, writes backend only
+    ========================= */
+
+    match /weddingPlannerTasks/{taskId} {
+      allow read: if canRead("planner");
+      allow write: if false;
+    }
+
+    /* =========================
+      Finances
+      Structure:
+      - financesMeta/main
+      - financesExpenses/{id}
+      - financesCategories/{id}
+      - financesPayers/{id}
+    ========================= */
+
+    match /financesMeta/{id} {
+      allow read: if canRead("finances");
+      allow write: if false;
+    }
+
+    match /financesExpenses/{id} {
+      allow read: if canRead("finances");
+      allow write: if false;
+    }
+
+    match /financesCategories/{id} {
+      allow read: if canRead("finances");
+      allow write: if false;
+    }
+
+    match /financesPayers/{id} {
+      allow read: if canRead("finances");
+      allow write: if false;
+    }
+
+    /* =========================
+       Menus / Dietary
+       - menus/{menuId}
+       - menuAssignments/{guestId}
+       lecture selon perms, writes backend only
+    ========================= */
+
+    match /menus/{menuId} {
+      allow read: if canRead("menus_seating");
+      allow write: if false;
+    }
+
+    match /menuAssignments/{guestId} {
+      allow read: if canRead("menus_seating");
+      allow write: if false;
+    }    
+
+    /* =========================
+       Admin Dashboard summary
+    ========================= */
+
+    match /adminDashboard/{docId} {
+      allow read: if isSuperAdmin()
+        || (docId == "rsvp" && canRead("rsvp"))
+        || (docId == "finances" && canRead("finances"))
+        || (docId == "menus" && canRead("menus_seating"))
+        || (docId == "seating" && canRead("menus_seating"))
+        || (docId == "emails" && (canRead("emails") || has("emails:send")))
+        || (docId == "blog" && has("blog:write"))
+        || (docId == "playlist" && canRead("playlist"))
+        || (docId == "agenda" && canRead("agenda"))
+        || (docId == "planner" && canRead("planner"));
+      allow write: if false;
+    }
+
+
+    /* =========================
+       Default deny
+    ========================= */
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

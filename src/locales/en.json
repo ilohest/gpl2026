@@ -1,0 +1,1431 @@
+{
+  "pagetitle": {
+    "404": "Page not found",
+    "home": "Invitació GPL 2026",
+    "login": "Iniciar sessió - Gran PL 2026",
+    "rsvp": "Confirmar assistència",
+    "accommodation": "Accommodation",
+    "blog": "GPL 2026's blog",
+    "admin": "Admin panel",
+    "superadmin": "Super-admin panel",
+    "access": "Login",
+    "profile": "Profile",
+    "reset": "Reset password",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "credits": "Credits"
+  },
+  "header": {
+    "home": "Inici",
+    "rsvp": "Confirmar assistència",
+    "accommodation": "Accommodation",
+    "blog": "Blog",
+    "superadmin": "Superadmin",
+    "admin": "Admin"
+  },
+  "intro": {
+    "welcome": "Gran PL",
+    "names": "GPL 2026",
+    "excitement": "Estem molt contents de compartir aquest dia amb vosaltres!"
+  },
+  "invitation": {
+    "intro": "Estimats companys, <br>us esperem, amb molta il.lusió, <br>el <strong>{invitationDateTime}</strong>, <br> per la celebració de la gran PL, que tindrà lloc al",
+    "location": "Restaurant Les Terrasses de Sant Romà,",
+    "activities": "on reunirem els nostres cors.",
+    "cant-miss": ""
+  },
+  "countdown": {
+    "event_day": "Ha arribat el gran dia!",
+    "remaining_time": "Queden <br> <strong>{days} dies, {hours} hores, and {minutes} minuts</strong><br> per celebrar la reunió plenària."
+  },
+  "homepagersvp": {
+    "title": "Confirmeu la vostra assistència",
+    "title-mobile": "Confirmeu <br>la vostra assistència",
+    "celebration": "",
+    "instructions": "Feu-nos saber si podreu assistir a través del formulari de confirmació. <br>Digueu-nos si veniu acompanyats.<br><br>Si us plau, confirmeu la vostra assistència abans del",
+    "deadline": "20 d'agost del 2026.",
+    "button": "Confirmar assistència"
+  },
+  "waves": {
+    "text": "Déu, que és la perfecció de la ciència i de l'amor, només ofereix i accepta la ciència i l'amor perfectes. El tresor sepultat dins la terra. El gran concentrat de l'Univers.",
+    "text1": "Everything started in a minimal moment, when the world stopped making noise and your name found meaning in my voice. Everything started in a minimal moment, when the world stopped making noise and your name found meaning in my voice."
+  },
+  "schedule": {
+    "title": "Informació pràctica",
+    "day": "Dissabte 27 de setembre",
+    "when": {
+      "title": "Quan"
+    },
+    "where": {
+      "title": "On",
+      "place": "Restaurant Les Terrasses de Sant Romà",
+      "address": "Carretera Badalona a Mollet B-500, Km 4, <br>08391 Tiana, Barcelona"
+    },
+    "participation": {
+      "title": "Participació",
+      "price": "30€",
+      "info": "Es cobrarà el mateix dia abans de començar la reunió plenària. <br>Us agrairem que arribeu amb temps suficient i que porteu els diners justos corresponents (ni Visa, ni talons bancaris), per tal de facilitar el pagament a la direcció del restaurant."
+    },
+    "other": "Us demanem que doneu a conèixer aquesta invitació a tots els vostres companys que potser no l’hagin rebut, per tal de que ningú es quedi sense la informació.",
+    "ceremony": {
+      "title": "Ceremony",
+      "place": "{ceremonyVenue}",
+      "address": "{ceremonyAddress}",
+      "time": "at {ceremonyTime}"
+    },
+    "celebration": {
+      "title": "Celebration",
+      "place": "{celebrationVenue}",
+      "address": "{celebrationAddress}"
+    }
+  },
+  "transport": {
+    "title": "Transport",
+    "description": "A bus will leave from {busOriginName} to the <strong>church</strong> at {busToCeremonyTime}.<br>After the ceremony, the same bus will take you to <strong>{busToVenueName}</strong>.<br>The bus will return to <strong>{busOriginName}</strong> at {busReturnTime}.<br><br>Please confirm your seat when filling out the form.<br><br>We are also providing contact numbers for taxis in the area:"
+  },
+  "dresscode": {
+    "title": "Dresscode",
+    "description": "No conditions, just come as you like!<br>Since the celebration will be held in a garden during the day, just a small recommendation for your comfort...<br>wide and comfortable heels!"
+  },
+  "accommodation": {
+    "title": "Accommodation",
+    "description": "For those who need accommodation near the celebration, we have prepared a list of our recommendations.",
+    "button": "Accommodation"
+  },
+  "gift": {
+    "title": "Travel",
+    "description": "The best gift you can give us is your presence.<br>But if you would like to make it extra special...<br>Help us make our trip even more unforgettable!"
+  },
+  "faq": {
+    "title": "Other questions",
+    "q1": {
+      "question": "Can children come?",
+      "answer": "Of course! We love having children as part of the celebration. We have areas dedicated to their fun and safety."
+    },
+    "q2": {
+      "question": "Is there parking available?",
+      "answer": "We have ample parking for all our guests. Please follow the signs upon arrival to find the designated parking areas."
+    },
+    "q3": {
+      "question": "What if I have more questions?",
+      "answer": "We're here to help. If you have any additional questions, please contact us by phone or through our website contact form."
+    }
+  },
+  "end": {
+    "love": "",
+    "names": "GPL 2026",
+    "excitement": "<strong>Esperem veure-us i celebrar amb vosaltres!</strong>",
+    "button": "Confirmar assistència"
+  },
+  "rsvp": {
+    "title": "Confirmeu la vostra assistència",
+    "excitement": "Ens encantaria veure-us!",
+    "instructions": "Si us plau, confirmeu la vostra assistència abans del",
+    "deadline": "20 d'agost del 2026.",
+    "diet": {
+      "vegetarian": "Vegetariana",
+      "vegan": "Vegana",
+      "gluten_free": "Sense gluten",
+      "lactose_free": "Sense lactosa",
+      "nuts_allergy": "Al·lèrgia als fruits secs",
+      "pregnant": "Embaràs",
+      "other": "Una altra (especificar)"
+    },
+    "form": {
+      "name": "Nom*",
+      "surname": "Cognoms*",
+      "email": "Correu electrònic*",
+      "email_opt": "Correu electrònic",
+      "message": "Missatge*",
+      "attending": "Assistireu*?",
+      "yes": "Sí",
+      "no": "No",
+      "additional_guests_title": "Persones addicionals",
+      "add_guest": "Afegir una persona",
+      "additional_guests_help": "Afegiu aquí les persones que vindran amb vosaltres (+1, nens, etc.).",
+      "guest_n": "Convidat",
+      "is_child": "És un nen/a",
+      "transport": "Necessitareu transport en autobús*?",
+      "wedding_parts": "A quines parts assistireu*?",
+      "wedding_part_mass": "Missa",
+      "wedding_part_cocktail_reception": "Còctel / recepció",
+      "wedding_part_dinner": "Sopar",
+      "wedding_part_party": "Festa",
+      "wedding_part_brunch": "Brunch",
+      "diet": "Teniu alguna restricció alimentària*?",
+      "diet_details": "Si us plau, especifiqueu les vostres restriccions alimentàries:",
+      "songs": "Quines cançons no poden faltar? 🎶",
+      "songs_help": "Proposeu una o diverses cançons que us agradaria escoltar durant la festa.",
+      "song_title_label": "Títol de la cançó",
+      "song_artist_label": "Artista",
+      "song_title_placeholder": "Títol de la cançó…",
+      "song_artist_placeholder": "Artista…",
+      "add_song": "Afegir una cançó",
+      "comments": "Preguntes o comentaris",
+      "submit": "Enviar",
+      "submitting": "Enviant…"
+    },
+    "confirmation": {
+      "title": "Gràcies per la vostra resposta!",
+      "message": "Hem rebut la vostra resposta amb molta estima. <br>Us hem enviat un correu electrònic de confirmació. <br>Ens alegra comptar amb vosaltres en aquest dia especial... o tenir-vos presents en esperit. ❤️",
+      "names": "{bride} i {groom}"
+    },
+    "toast": {
+      "success_title": "La vostra resposta s'ha enviat",
+      "error_title": "Error en enviar",
+      "error_detail": "Hi ha hagut un problema en enviar la confirmació. Si us plau, torneu-ho a intentar."
+    },
+    "submit_ok": "Gràcies! Hem rebut la vostra resposta."
+  },
+  "accommodations": {
+    "title": "Accommodation",
+    "description": "Explore our accommodation recommendations. <br>We have compiled a varied selection of options, covering different categories and styles, all located near the event venue.",
+    "loc1": "Less than 10 minutes from the banquet",
+    "loc2": "20 minutes from the banquet"
+  },
+  "error": {
+    "message": "Sorry, the page you are looking for could not be found.",
+    "button": "Back to home"
+  },
+  "adminlogin": {
+    "title": "Admin panel",
+    "email_label": "Email address",
+    "password_label": "Password",
+    "submit": "Log in",
+    "error_required": "Please fill in all fields."
+  },
+  "login": {
+    "password": "Password",
+    "submit": "Log in",
+    "error_incorrect": "Incorrect password.",
+    "error_unexpected": "An unexpected error occurred."
+  },
+  "access": {
+    "signup_title": "Create an account",
+    "login_title": "Log in",
+    "invite_hint": "Invitation detected. Create an account (or log in if you already have one) to activate it.",
+    "password_confirm": "Confirm password",
+    "signup_submit": "Create account",
+    "already_have_account": "I already have an account: log in",
+    "error_required": "All fields are required.",
+    "error_password_mismatch": "Passwords do not match.",
+    "error_email_used": "Email already in use. Click “I already have an account”.",
+    "error_signup_generic": "Error while creating the account.",
+    "toast_signup_ok": "Account created",
+    "toast_signup_fail": "Account creation failed",
+    "invite_failed": "Invalid or expired invitation.",
+    "invite_revoked": "This invitation has been revoked.",
+    "invite_expired": "This invitation has expired.",
+    "invite_already_used": "This invitation has already been used.",
+    "invite_wrong_email": "This invitation does not match this email address.",
+    "invite_invalid": "Invalid invitation.",
+    "toast_login_fail": "Unable to sign in.",
+    "login_invalid_credential": "Incorrect email or password.",
+    "login_wrong_password": "Incorrect password.",
+    "login_user_not_found": "No account found with this email.",
+    "login_invalid_email": "Invalid email address.",
+    "login_too_many_requests": "Too many attempts. Please try again later.",
+    "login_generic": "Unable to sign in.",
+    "forgot_password": "Forgot password?"
+  },
+  "superadmin": {
+    "title": "Superadmin",
+    "helper_page": "Here you can create invitations to invite users to the platform, view and manage generated invitations, and view and manage each user's permissions.",
+    "tabs": {
+      "invites": "Invites",
+      "users": "Users"
+    },
+    "invite": {
+      "create_title": "Create an invitation",
+      "name": "Name (optional)",
+      "email": "Email",
+      "permissions": "Permissions",
+      "permissions_help": "Configure access permissions for this invitation.",
+      "create": "Create",
+      "send": "Send by email",
+      "copy_link": "Copy link",
+      "copy_hint": "Copy the link before closing the dialog, or send it by email. After closing the dialog, the link is no longer available.",
+      "expires_at": "Expires",
+      "status": "Status",
+      "status_active": "Active",
+      "status_accepted": "Accepted",
+      "status_revoked": "Revoked",
+      "actions": "Actions",
+      "revoke": "Revoke",
+      "empty_title": "No invitations",
+      "empty_hint": "Create an invitation above to grant access.",
+      "name_placeholder": "Magali",
+      "email_placeholder": "guest@email.com",
+      "bulk_title": "Quick actions",
+      "bulk_read_all": "Read access everywhere",
+      "bulk_write_all": "Write access everywhere",
+      "bulk_check_all": "Select all",
+      "bulk_clear_all": "Clear all",
+      "superadmin_locks_other_perms": "Superadmin enabled: all other permissions are locked.",
+      "helper_point_1": "Create invitations and set permissions by module.",
+      "helper_point_2": "Use read to view and write to edit.",
+      "helper_point_3": "Write implies read. If you remove read, write is removed too.",
+      "helper_point_4": "Select module permissions for this invitation.",
+      "created_title": "Invitation created",
+      "created_hint": "Copy the link now: it will no longer be retrievable after closing."
+    },
+    "user": {
+      "email": "Email",
+      "permissions": "Permissions",
+      "ai_chat": "AI chat",
+      "invited_by": "Invited by",
+      "edit_permissions": "Edit user permissions",
+      "bulk_title": "Quick actions",
+      "bulk_read_all": "Read access everywhere",
+      "bulk_write_all": "Write access everywhere",
+      "bulk_check_all": "Select all",
+      "bulk_clear_all": "Clear all",
+      "superadmin_locks_other_perms": "Superadmin enabled: all other permissions are locked."
+    },
+    "ai_chat": {
+      "title": "AI chatbot access",
+      "help": "Enable or disable access to the admin AI chatbot for this user.",
+      "enabled": "Chatbot access enabled",
+      "disabled": "Chatbot access disabled"
+    },
+    "perms": {
+      "read": "Read",
+      "write": "Write",
+      "send": "Send",
+      "group": {
+        "core": "Access",
+        "rsvp": "RSVP",
+        "playlist": "Playlist",
+        "blog": "Blog",
+        "menus_seating": "Seating & menus",
+        "finances": "Finances",
+        "agenda": "Agenda",
+        "planner": "IA planner",
+        "emails": "Emails",
+        "ai_chat": "AI chat"
+      },
+      "item": {
+        "superadmin_all": "Superadmin access",
+        "ai_chat_use": "Use chatbot"
+      },
+      "superadmin_warning": "Grants all permissions (including user management)."
+    },
+    "toast": {
+      "link_copied": "Link copied",
+      "copy_failed": "Copy failed",
+      "load_failed": "Load failed",
+      "invite_created": "Invitation created",
+      "invite_create_failed": "Create invite failed",
+      "email_already_registered": "A user with this email already exists.",
+      "missing_email": "Missing email, unable to send",
+      "missing_token": "Missing token, unable to send",
+      "invite_sent": "Invitation sent",
+      "send_failed": "Send failed",
+      "invite_already_used": "This invitation has already been used. Create a new invitation for this email.",
+      "invite_revoked": "Invitation revoked",
+      "revoke_failed": "Revoke failed",
+      "permissions_updated": "Permissions updated",
+      "update_failed": "Update failed"
+    }
+  },
+  "admin": {
+    "back": "Back to table",
+    "back_to_dashboard": "Back to dashboard",
+    "nav": {
+      "dashboard": "Dashboard",
+      "subtitle": "Navigation",
+      "budget": "Budget"
+    },
+    "ai_chat": {
+      "open_aria": "Open AI chat",
+      "close_aria": "Close AI chat",
+      "header": "AI Assistant",
+      "header_superadmin": "Superadmin AI Assistant",
+      "empty_title": "How can I help you?",
+      "empty_hint": "Ask me about guests, seating plan, budget...",
+      "empty_hint_superadmin": "Ask me about users, permissions, and invitations...",
+      "input_placeholder": "Ask your question...",
+      "suggestions_show_aria": "Show suggested questions",
+      "suggestions_hide_aria": "Hide suggested questions",
+      "fallback_answer": "Sorry, I couldn't answer that question.",
+      "error_answer": "An error occurred. Please try again.",
+      "suggestions": {
+        "default_admin_1": "How many people have confirmed and how many declined?",
+        "default_admin_2": "Which tasks are due this week and still pending?",
+        "default_admin_3": "What is the remaining budget?",
+        "rsvp_1": "Has Laura Mendes responded?",
+        "rsvp_2": "What are the names of guests who need transportation?",
+        "rsvp_3": "Who is coming to brunch?",
+        "finances_1": "Top 5 spending categories",
+        "finances_2": "What is the remaining budget?",
+        "finances_3": "Are there uncategorized expenses?",
+        "seating_1": "How many guests are unassigned?",
+        "seating_2": "Are any tables overloaded?",
+        "seating_3": "How many tables do we need for 10 seats each?",
+        "agenda_1": "When does the DJ intervene?",
+        "agenda_2": "When do the witnesses intervene in the agenda?",
+        "agenda_3": "Are there agenda items without a time?",
+        "playlist_1": "Top 8 playlist artists",
+        "playlist_2": "Are there duplicate songs?",
+        "playlist_3": "Is the song Despecha in the playlist?",
+        "planner_1": "What is the next priority task?",
+        "planner_2": "How many pending tasks have no date?",
+        "planner_3": "Top 5 upcoming tasks",
+        "menus_1": "Which restrictions does each menu cover?",
+        "menus_2": "How many guests have no menu assigned?",
+        "menus_3": "Which assignments need review?",
+        "blog_1": "What is the latest blog post?",
+        "blog_2": "When was the latest post published?",
+        "email_1": "When was the last email sent?",
+        "email_2": "How many email sends are recorded?",
+        "superadmin_users_1": "Who has the superadmin permission?",
+        "superadmin_users_2": "What permissions does this user have: maria@example.com?",
+        "superadmin_invites_1": "How many invitations are still active?",
+        "superadmin_invites_2": "Is there an invitation for paul@example.com?"
+      }
+    },
+    "bento": {
+      "rsvp_title": "Guest responses",
+      "rsvp_subtitle": "Manage guest responses ",
+      "rsvp_plusones": "Plus ones",
+      "rsvp_transport": "Transport",
+      "rsvp_last": "Last response",
+      "rsvp_last_guests": "person(s)",
+      "blog_subtitle": "Publish an update on the blog",
+      "blog_last": "Last post",
+      "email_subtitle": "Send emails to the guests",
+      "email_last": "Last send",
+      "none": "Never",
+      "seating_subtitle": "Organise the seating plan",
+      "seating_tables": "Number of tables",
+      "seating_unassigned": "Guests to place",
+      "countdown_title": "GPL 2026",
+      "countdown_subtitle": "left",
+      "countdown_days_left": "days left",
+      "countdown_today": "Today",
+      "countdown_days": "{days} days",
+      "rsvp_diet": "Guests with dietary restrictions",
+      "finances_subtitle": "Track your budget by category",
+      "finances_used": "Used",
+      "finances_spent": "Spent",
+      "finances_remaining": "Remaining budget",
+      "agenda_subtitle": "Day-of schedule",
+      "agenda_total": "Items",
+      "agenda_next": "Next",
+      "agenda_first": "First item",
+      "agenda_last": "Last item",
+      "planner_subtitle": "Turn a natural-language note into an action plan",
+      "planner_pending": "Pending tasks",
+      "planner_next": "Next task",
+      "menus_subtitle": "Manage menus based on dietary restrictions",
+      "menus_active": "Active menus",
+      "menus_needs_review": "To review",
+      "playlist_total": "Suggested tracks",
+      "open_section": "Open section"
+    },
+    "wow": {
+      "overall_score": "Overall readiness",
+      "overall_hint": "Based on RSVP, seating, planner and budget.",
+      "rsvp_funnel": "RSVP funnel",
+      "pending": "Pending",
+      "budget_health": "Budget progress",
+      "remaining": "Remaining",
+      "next_actions": "Next actions"
+    },
+    "planner": {
+      "title": "AI Planner",
+      "helper": "Describe the tasks you want to organize before the wedding. The planner generates a clear list and places them on the calendar.",
+      "input_label": "What should be planned?",
+      "placeholder": "Example 1: next Monday at noon, tasting with the caterer. Urgent. Ask about gluten-free options.\nExample 2: bridal dress fitting in 2 weeks, Tuesday at 4:00 PM. Do not forget to bring heels. Send a message to Margo tomorrow to invite her to come with me.",
+      "generate": "Generate task",
+      "clear": "Clear",
+      "summary": "Summary",
+      "model_label": "Model: {model}",
+      "sample": "Example: next Monday at noon, tasting with the caterer.",
+      "no_tasks": "No actionable task was generated. Add more details and try again.",
+      "follow_up_title": "Questions to clarify",
+      "save_tasks": "Save tasks",
+      "validation_prompt": "Please describe at least one task to plan.",
+      "validation_task_title_required": "Each task must have a title before saving.",
+      "generated_title": "Plan generated",
+      "generated_body": "{count} task(s) proposed.",
+      "save_tasks_success_title": "Planner updated",
+      "save_tasks_success_body": "{count} task(s) saved.",
+      "todo_title": "Planning todo list",
+      "todo_empty": "No planning task yet.",
+      "edit_suggestions_hint": "You can edit or remove each suggestion before saving.",
+      "task_title_placeholder": "Task title",
+      "task_location_placeholder": "Location (optional)",
+      "task_note_placeholder": "Short note (optional)",
+      "reject_one": "Reject",
+      "reject_all": "Reject all",
+      "mark_done": "Mark done",
+      "mark_todo": "Mark todo",
+      "todo_pending": "Pending",
+      "todo_done": "Completed",
+      "done_label": "Done",
+      "task_details_title": "Task details",
+      "day_tasks_title": "Actions for: {date}",
+      "when_label": "When",
+      "day_tasks_empty": "No planned actions for this day.",
+      "today": "Today",
+      "view_todo": "Todo",
+      "view_calendar": "Calendar",
+      "view_week": "Week",
+      "view_month": "Month",
+      "priority": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "urgent": "Urgent"
+      },
+      "edit_task_title": "Edit task",
+      "unscheduled_date": "Date not set",
+      "unscheduled_time": "Time not set"
+    },
+    "responses": {
+      "title": "Guest responses",
+      "name": "Name",
+      "message": "Message",
+      "attending": "Attending",
+      "transport": "Transport",
+      "wedding_event_parts": "GPL 2026 parts",
+      "restrictions": "Restrictions",
+      "songs": "Songs",
+      "comments": "Comments",
+      "email": "Email",
+      "export": "Export to Excel",
+      "delete": "Delete",
+      "delete_guest_tooltip": "Delete guest",
+      "total_transport": "Transportation",
+      "total_diet_yes": "Dietary restrictions",
+      "role": "Type",
+      "role_primary": "Main guest",
+      "role_plus_one": "Plus one",
+      "main_guest": "Comes with",
+      "created_at": "Response on",
+      "detail_title": "Response details",
+      "not_found": "Response not found.",
+      "group_people": "Guest(s)",
+      "no_people": "No person recorded in this group.",
+      "view_mode": "View",
+      "edit_mode": "Edit",
+      "couple_bride": "Primary participant",
+      "couple_groom": "Companion",
+      "couple_pair": "GPL 2026",
+      "save_ok": "Changes saved successfully",
+      "attending_none": "No one is attending",
+      "attending_all": "{yes} guest attending",
+      "attending_mixed": "{yes}/{total} guest attending",
+      "help_1": "Click on a row to view the full details of a response.",
+      "help_2": "From the detail view, you can edit a guest’s information if needed.",
+      "help_3": "To remove the information linked to a guest (their response), use the “Delete” button in the last column of the table.",
+      "add_manual_title": "Add guests",
+      "add_manual_couple_title": "Add couple",
+      "add_manual_group_hint": "You can add one or multiple people (including children) in the same RSVP group.",
+      "add_manual_group_consistency_msg": "To keep data consistent, if people are coming together (couple, children, or family), add them in this same RSVP group.",
+      "add_manual_group_add_person": "Add person",
+      "add_manual_group_remove_person": "Remove person",
+      "add_manual_group_person_n": "Person {n}",
+      "add_manual_group_primary": "Primary",
+      "add_manual_group_plus_one": "Companion",
+      "add_manual_group_error_min_one": "Add at least one person.",
+      "couple_person_primary": "Primary person",
+      "couple_person_partner": "Partner (+1)",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "add_manual_error_name": "First name and last name are required.",
+      "add_manual_couple_error_name": "Both people must have first name and last name.",
+      "add_manual_error_email": "Invalid email.",
+      "add_manual_success": "Guest added manually.",
+      "add_manual_couple_success": "GPL 2026 added manually.",
+      "gift_amount": "Gift (€)",
+      "is_child": "Child"
+    },
+    "stats": {
+      "total_people": "Total of people attending",
+      "total_people_main": "Main guests",
+      "total_people_plusone": "Plus ones",
+      "total_children": "Children",
+      "total_people_declined": "People not attending",
+      "couple_included_tooltip": "GPL 2026 is included in this total.",
+      "attendance_rate": "Attendance rate",
+      "attendance_label": "Attending among people who answered",
+      "attendance_detail1": "Present",
+      "attendance_detail2": "Total people",
+      "attendance_detail3": " Forms received",
+      "rsvp_deadline_title": "RSVP deadline",
+      "rsvp_days_left": "Days left",
+      "rsvp_deadline_date": "Deadline date",
+      "rsvp_deadline_unknown": "Unable to compute the deadline.",
+      "rsvp_deadline_in_days": "{count} days left before the deadline.",
+      "rsvp_deadline_tomorrow": "The deadline is tomorrow.",
+      "rsvp_deadline_today": "The deadline is today.",
+      "rsvp_deadline_passed_days": "The deadline passed {count} days ago.",
+      "responses_overview": "RSVP responses overview",
+      "responses_received": "Forms received",
+      "people_responded": "People who responded",
+      "avg_people_per_response": "Avg people / form",
+      "diet_hint": "People attending who declared at least one restriction",
+      "diet_menu_auto_hint": "You can create menus based on dietary restrictions, and menus are assigned automatically to attending guests according to their needs.",
+      "transport_hint": "Total of transport seats to plan ",
+      "songs_title": "Suggested songs",
+      "songs_hint": "Guests who suggested at least one song",
+      "songs_manage_button": "Manage playlist",
+      "other_not_specified": "Other (not specified)"
+    },
+    "blog": {
+      "title": "GPL 2026 blog",
+      "upload_image": "Upload image",
+      "drop_hint": "Drag and drop your image here or click to select it",
+      "title1": "Manage blog posts",
+      "helper": "Manage the blog posts here (create, edit, delete).",
+      "new": "New post",
+      "new_short": "New post",
+      "new_hint": "Click to create a new blog post",
+      "preview": "Image preview",
+      "new_title": "New post",
+      "edit_title": "Edit post",
+      "submit": "Publish and notify guests",
+      "update": "Save changes",
+      "confirm_send": "Publish this post and send a notification to all confirmed guests?",
+      "confirm_yes": "Yes, send",
+      "confirm_delete": "Delete this blog post?",
+      "err_text": "Please fill in the text.",
+      "err_image": "Please select a valid image.",
+      "text_es": "Text in Spanish",
+      "text_en": "Text in English",
+      "image_text_es": "Post text in Spanish…",
+      "image_text_en": "Post text in English…",
+      "history_title": "Blog email history",
+      "history_empty": "No blog notifications yet."
+    },
+    "toast": {
+      "login_ok": "Logged in successfully.",
+      "blog_created": "Post created",
+      "blog_queued": "Post created. Notification queued",
+      "blog_update_ok": "Post updated",
+      "blog_delete_ok": "Post deleted",
+      "saved_title": "Saved",
+      "agenda_template_added": "The agenda template has been added successfully.",
+      "deleted_title": "Deleted",
+      "agenda_created": "Agenda item added.",
+      "agenda_updated": "Agenda item updated.",
+      "agenda_deleted": "Agenda item deleted: {title}."
+    },
+    "diet": {
+      "dialog_with_diet": "With restriction",
+      "dialog_none": "No restrictions declared yet."
+    },
+    "dietpdf": {
+      "button": "Diet restrictions PDF",
+      "title": "Dietary restrictions — summary",
+      "total_attendees": "Attending guests",
+      "total_with_diet": "With restriction",
+      "none": "No restrictions declared yet.",
+      "filename": "dietary-restrictions.pdf",
+      "error": "Unable to generate the PDF. Check the console for more details.",
+      "other_not_specified": "Other (not specified)"
+    },
+    "email_blast": {
+      "title": "Send emails",
+      "subject_label": "Subject",
+      "send_all": "Send",
+      "send_test": "Send test",
+      "test_dialog_title": "Send a test email",
+      "test_dialog_help": "Choose the email address that will receive the test.",
+      "test_email_placeholder": "Test email",
+      "manual_placeholder": "Select recipients…",
+      "confirm_send_all": "Send this email to the selected recipients?",
+      "status_sending": "Sending…",
+      "status_sent": "Email sent",
+      "err_subject_required": "Subject is required.",
+      "err_message_empty": "Message is empty.",
+      "recipients_count_yes": "Recipients: {count} (Yes)",
+      "recipients_count_all": "Recipients: {all} (Yes: {yes} · No: {no})",
+      "recipients_count_manual": "Selected recipients: {count}",
+      "err_manual_empty": "Select at least one recipient.",
+      "err_test_email_required": "Test email is required.",
+      "mode_all_responded": "Everyone who replied (yes + no)",
+      "mode_only_attending": "Only attending (yes)",
+      "mode_manual": "Manual selection",
+      "job_queued": "Scheduled…",
+      "job_running": "Sending…",
+      "job_done": "Sending complete",
+      "job_error": "Sending failed",
+      "job_skipped": "Sending skipped",
+      "job_no_recipients": "No recipients",
+      "job_progress": "Progress: {done}/{total}",
+      "status_queued": "Sending started",
+      "refresh_safe": "You can leave or refresh this page: sending will continue.",
+      "test_sent_ok": "Test email sent to {email}.",
+      "history_title": "Campaign history",
+      "history_empty": "No campaigns yet.",
+      "no_subject": "No subject",
+      "details_title": "Campaign details",
+      "preview": "Preview",
+      "preview_unavailable": "Content is not available for this campaign.",
+      "deliveries_title": "Recipients / deliveries",
+      "deliveries_empty": "No recipients recorded."
+    },
+    "seating": {
+      "title": "Table plan",
+      "print_guests": "Guest list PDF",
+      "print_layout": "Table layout PDF",
+      "print_tables": "Detailed tables PDF",
+      "create_table": "Create a new table",
+      "table_name": "Table name (optional)",
+      "capacity": "Total capacity",
+      "shape": "Table shape",
+      "shape_round": "Round table",
+      "shape_square": "Rectangular table",
+      "square_sides": "Number of people on each side",
+      "side_top": "Top side",
+      "side_right": "Right side",
+      "side_bottom": "Bottom side",
+      "side_left": "Left side",
+      "add_table": "Add table",
+      "layout_title": "Table layout",
+      "layout_help": "Use the seating layout to organize tables in the space. You can also drag a guest onto a table or select a table by clicking on it.",
+      "open_layout": "Seating plan",
+      "guests_short": "guests",
+      "no_tables_yet": "No tables created yet.",
+      "guest_pool": "Guests to place",
+      "guest_pool_help": "Drag a guest onto a table in the table organization section, or select a table and click on a guest to add them. Guests who are attending together are grouped.",
+      "guests_unassigned": "Unassigned guests",
+      "search_placeholder": "Name or surname…",
+      "no_unassigned": "All guests are already placed.",
+      "no_search_match": "No guest matches this search.",
+      "confirm_delete": "Delete this table? Guests will be moved back to the unassigned guests list.",
+      "confirm_delete_header": "Confirmation",
+      "delete": "Delete table",
+      "cancel": "Cancel",
+      "delete_ok": "Table deleted successfully",
+      "table_full": "Maximum capacity reached for this table",
+      "table_full_detail": "Increase the capacity or choose another table.",
+      "default_table_name": "Table",
+      "layout_dialog_title": "Global table layout",
+      "layout_no_tables": "Create tables first to be able to organise them in the room.",
+      "print_guests_title": "List of attending guests",
+      "col_last_name": "Last name",
+      "col_first_name": "First name",
+      "col_table": "Table",
+      "print_layout_title": "Room layout",
+      "print_tables_title": "Table details",
+      "table_label": "Table",
+      "no_guests_table": "No guest for this table.",
+      "persons_short": "people",
+      "pdf_guests_filename": "guest-list.pdf",
+      "pdf_layout_filename": "room-layout.pdf",
+      "pdf_tables_filename": "tables-details.pdf",
+      "pdf_error": "Unable to generate the PDF. Check the console for more details.",
+      "rotate_table": "Rotate the table",
+      "layout_desktop_only": "This feature is only available on desktop. Please open the admin interface on a computer to manage the seating plan.",
+      "table_card_counts": "{count} guests — Capacity: {capacity}",
+      "guests_count": "{count} guests",
+      "table_details_empty": "No guests added to this table yet",
+      "settings": "Settings",
+      "capacity_total": "Total capacity",
+      "seats_per_side": "Seats per side",
+      "schema": "Layout",
+      "table_not_found": "Table not found.",
+      "door_alt": "Door",
+      "layout_help_drag": "Drag and drop tables to organize the room.",
+      "layout_help_rotate": "Use ↻ to rotate a table.",
+      "layout_help_door": "Drag the door to an edge to position it and orient the layout.",
+      "layout_help_hover": "Hover a table to see its guests, or hover a guest to see their name.",
+      "table_cards_help": "Within each table created, you can drag and drop guests to change their order. You can also move guests between tables by dragging them.",
+      "table_details_help_reorder": "You can change the guest order with drag & drop (in the list or directly on the layout).",
+      "table_details_help_capacity": "You can edit the capacity (or seats per side): the layout updates automatically.",
+      "table_details_help_clockwise": "The layout is filled following the list order, clockwise around the table. For a rectangular table: top → right → bottom → left.",
+      "table_details_help_arrows": "Use the arrows on the top to move to the previous / next table.",
+      "open_plan": "View seating plan",
+      "table": "Table"
+    },
+    "playlist": {
+      "title": "Playlist",
+      "subtitle": "From your guests’ suggestions, build your ideal playlist.",
+      "saving": "Saving playlist…",
+      "save_error": "Error while saving playlist.",
+      "saved": "Playlist saved.",
+      "song_title": "Song title",
+      "song_title_placeholder": "Search for a song…",
+      "song_artist": "Artist",
+      "song_artist_placeholder": "Artist name",
+      "song_album": "Album (optional)",
+      "song_album_placeholder": "Album name",
+      "add_button": "Add to playlist",
+      "songs_count_label": "song(s)",
+      "view_grid": "Grid view",
+      "view_list": "List view",
+      "selection_on": "Selection in progress",
+      "selection_off": "Select songs",
+      "selection_count": "{count} song(s) selected",
+      "selection_hint": "Select songs",
+      "select_all": "Select all",
+      "bulk_delete": "Delete selection",
+      "export": "Export (Excel)",
+      "proposed_by": "Suggested by",
+      "added_by_couple_long": "GPL 2026",
+      "empty_state": "No song in the playlist yet.",
+      "col_title": "Title",
+      "col_artist": "Artist",
+      "col_album": "Album",
+      "bulk_delete_message": "Delete the selected songs from the playlist?",
+      "bulk_delete_title": "Confirm deletion",
+      "toast_song_deleted": "Song deleted.",
+      "toast_songs_deleted": "{count} songs deleted.",
+      "help_1": "Add songs manually to the playlist.",
+      "help_2": "Reorder the playlist with drag & drop (disabled while selection mode is on).",
+      "help_3": "Use Selection mode to delete multiple songs at once.",
+      "help_4": "Export the current playlist to Excel for your DJ.",
+      "help_5": "The playlist is saved automatically after each change.",
+      "add_dialog_title": "Add song"
+    },
+    "finances": {
+      "helper_body": "Set a total budget, record expenses (date/notes/paid), then filter/sort to track what’s left.",
+      "charts_help": "The charts show spending by category, paid vs. unpaid, and by payer.",
+      "expenses_help": "Use column filters to narrow results. The search box matches label, notes, category and payer.",
+      "by_payer": "Spending by payer",
+      "exp_payer": "Paid by",
+      "category_ph": "Category",
+      "hint_category_free": "Type then Enter to create a category.",
+      "payer_ph": "Who paid?",
+      "hint_payer_free": "Type a name then Enter to add it.",
+      "toast_budget_saved": "Budget updated.",
+      "exp_create": "Add an expense",
+      "exp_edit": "Edit expense",
+      "toast_expense_created": "Expense added.",
+      "toast_expense_updated": "Expense updated.",
+      "unknown_payer": "Unknown",
+      "title": "Budget control",
+      "total_budget": "Total budget",
+      "spent": "Spent",
+      "paid": "Paid",
+      "to_pay": "To pay",
+      "remaining": "Remaining budget",
+      "cost_per_guest": "Average cost per guest",
+      "present_count": "{n} attending",
+      "percent_used": "% used",
+      "alert_over": "Alert: budget almost used",
+      "charts": "Stats",
+      "filter": "Filter",
+      "pie_title": "Breakdown by category",
+      "no_data": "No data to display.",
+      "paid_split": "Paid vs to pay",
+      "no_paid_split": "No expenses for this filter.",
+      "expenses": "Expenses",
+      "add": "Add expense",
+      "search": "Search",
+      "exp_date": "Date",
+      "exp_label": "Label",
+      "exp_category": "Category",
+      "exp_amount": "Amount",
+      "exp_paid": "Paid",
+      "exp_note": "Note",
+      "categories": {
+        "default": "Other",
+        "VENUE": "Venue",
+        "CATERING": "Catering",
+        "DRINKS": "Drinks",
+        "CAKE": "Cake",
+        "PHOTO_VIDEO": "Photo & video",
+        "MUSIC": "Music",
+        "DECOR": "Decor",
+        "FLOWERS": "Flowers",
+        "OUTFITS": "Outfits",
+        "BEAUTY": "Beauty",
+        "TRANSPORT": "Transport",
+        "LODGING": "Lodging",
+        "STATIONERY": "Stationery",
+        "GIFTS": "Gifts",
+        "FEES": "Fees",
+        "MISC": "Miscellaneous"
+      },
+      "confirm_delete_expense": "Delete expense \"{label}\"?",
+      "toast_expense_deleted": "Expense \"{label}\" deleted.",
+      "gifts_total": "Gifts",
+      "net_spent": "Net spent",
+      "net_hint": "Spent - gifts"
+    },
+    "agenda": {
+      "title": "Event agenda",
+      "pdf_button": "Event agenda PDF",
+      "view_list": "List",
+      "view_timeline": "Timeline",
+      "add": "Add",
+      "templates_btn": "Templates",
+      "helper_body": "Build the event schedule here: time, duration, title, location, participants, owners, music cues and notes.",
+      "helper_views": "Switch between List view and Timeline view.",
+      "helper_types_tags": "Types and owners: pick existing ones or create new tags by typing and pressing Enter. They will be reusable.",
+      "helper_reorder": "In List view, you can reorder items via drag & drop.",
+      "helper_print": "The PDF button generates a printable version of the agenda.",
+      "search_placeholder_list": "Search title, notes, tags, music…",
+      "filter_type_placeholder": "Type",
+      "filter_owner_placeholder": "Vendor",
+      "no_data": "No items to display.",
+      "no_results": "No results for your search.",
+      "col_time": "Time",
+      "col_action": "Activity",
+      "col_owners": "Vendors",
+      "col_participants": "Participants",
+      "col_note": "Note",
+      "tooltip_conflict": "Conflict",
+      "tooltip_view_note": "View note",
+      "tooltip_edit": "Edit",
+      "tooltip_duplicate": "Duplicate",
+      "tooltip_delete": "Delete",
+      "timeline_search_placeholder": "Search in timeline…",
+      "label_music": "Music:",
+      "label_notes": "Notes:",
+      "templates_dialog_title": "Agenda templates",
+      "templates_dialog_helper": "Add a basic structure. You can edit everything afterwards.",
+      "templates_add": "Add",
+      "edit_create_title": "Add an item",
+      "edit_edit_title": "Edit item",
+      "field_time": "Time",
+      "field_duration": "Duration (min)",
+      "field_title": "Title",
+      "field_type": "Type",
+      "field_location": "Location",
+      "field_participants": "Participants",
+      "field_owners": "Vendors",
+      "field_music": "Music (cues)",
+      "field_notes": "Notes",
+      "placeholder_time": "HH:mm",
+      "placeholder_title": "GPL 2026 entrance…",
+      "placeholder_type": "Pick a type or type and press Enter…",
+      "hint_type": "Select a standard type, or type and press Enter to create a custom type.",
+      "placeholder_location": "Dinner room…",
+      "placeholder_participants": "Select a guest…",
+      "hint_participants": "Select a guest or type a new name then press Enter.",
+      "placeholder_owners": "Select a vendor…",
+      "hint_owners": "Select a vendor or type a new tag then press Enter: it will be added and reusable.",
+      "add_music": "Add a track",
+      "conflict_title": "Conflict detected",
+      "conflict_body": "Overlaps with {count} other item(s).",
+      "btn_cancel": "Cancel",
+      "btn_save": "Save",
+      "delete_dialog_title": "Delete",
+      "delete_confirm": "Delete “{title}”?",
+      "btn_delete": "Delete",
+      "note_dialog_title": "Note",
+      "types": {
+        "default": "Other",
+        "LOGISTICS": "Logistics",
+        "SETUP": "Setup",
+        "CLEANUP": "Cleanup",
+        "CEREMONY": "Ceremony",
+        "COCKTAIL": "Cocktail",
+        "DINNER": "Dinner",
+        "PARTY": "Party",
+        "SPEECH": "Speeches",
+        "PHOTO": "Photo",
+        "VIDEO": "Video",
+        "MUSIC_CUE": "Music cue",
+        "LIGHT_SOUND": "Light & sound",
+        "TRANSPORT": "Transport",
+        "VENDOR": "Vendor",
+        "BREAK": "Break",
+        "OTHER": "Other"
+      },
+      "ownerTags": {
+        "DJ": "DJ",
+        "CATERER": "Caterer",
+        "PHOTOGRAPHER": "Photographer",
+        "OFFICIANT": "Officiant",
+        "WITNESSES": "Witnesses",
+        "FAMILY": "Family",
+        "WEDDING_PLANNER": "GPL 2026 planner",
+        "COORDINATION": "Coordination",
+        "SOUND_LIGHT": "Sound & lighting"
+      },
+      "presets": {
+        "CEREMONY": {
+          "title": "Ceremony",
+          "items": [
+            {
+              "time": "16:00",
+              "title": "Guests arrive"
+            },
+            {
+              "time": "16:30",
+              "title": "GPL 2026 entrance"
+            },
+            {
+              "time": "16:35",
+              "title": "Ceremony"
+            },
+            {
+              "time": "16:55",
+              "title": "Exit + group photo"
+            }
+          ]
+        },
+        "COCKTAIL": {
+          "title": "Cocktail",
+          "items": [
+            {
+              "time": "17:15",
+              "title": "Cocktail"
+            },
+            {
+              "time": "17:20",
+              "title": "GPL 2026 photos"
+            }
+          ]
+        },
+        "DINNER": {
+          "title": "Dinner",
+          "items": [
+            {
+              "time": "19:00",
+              "title": "Dinner room opens"
+            },
+            {
+              "time": "19:45",
+              "title": "GPL 2026 entrance (dinner)"
+            },
+            {
+              "time": "19:50",
+              "title": "Dinner service: starter"
+            },
+            {
+              "time": "20:30",
+              "title": "Primary participant’s witnesses speeches"
+            },
+            {
+              "time": "20:45",
+              "title": "Companion’s witnesses speeches"
+            },
+            {
+              "time": "21:00",
+              "title": "Dinner service: main course"
+            },
+            {
+              "time": "21:30",
+              "title": "Parents speeches"
+            }
+          ]
+        },
+        "PARTY": {
+          "title": "Party",
+          "items": [
+            {
+              "time": "22:30",
+              "title": "Dance floor opens"
+            },
+            {
+              "time": "23:30",
+              "title": "Cake / dessert"
+            }
+          ]
+        }
+      },
+      "copy_suffix": " (copy)",
+      "copy_fallback": "Copy",
+      "template": {
+        "ceremony": {
+          "arrival_guests": "Guests arrival",
+          "couple_entrance": "GPL 2026 entrance",
+          "ceremony": "Ceremony",
+          "exit_group_photo": "Exit + group photo"
+        },
+        "cocktail": {
+          "cocktail": "Cocktail",
+          "couple_photos": "GPL 2026 photos"
+        },
+        "dinner": {
+          "open_room": "Dinner room opens",
+          "couple_entrance": "GPL 2026 entrance (dinner)",
+          "service_starter": "Dinner service: starter",
+          "speech_bride_witnesses": "Primary participant’s witnesses speech",
+          "speech_groom_witnesses": "Companion’s witnesses speech",
+          "service_main": "Dinner service: main",
+          "speech_parents": "Parents speech"
+        },
+        "party": {
+          "open_dancefloor": "Dancefloor opens",
+          "cake_dessert": "Cake / dessert"
+        }
+      },
+      "print": {
+        "dialog_title": "Event agenda PDF",
+        "download_full": "Download full agenda",
+        "by_vendor": "By vendor",
+        "tag_placeholder": "DJ, catering, etc.",
+        "download_for_vendor": "Download agenda for a vendor",
+        "header_full": "Event agenda",
+        "header_tag": "Event agenda — {tag}",
+        "cols": {
+          "time": "Time",
+          "duration": "Duration",
+          "action": "Action",
+          "who": "Who",
+          "music": "Music"
+        },
+        "sections": {
+          "vendors": "VENDORS",
+          "participants": "PARTICIPANTS",
+          "notes": "NOTES"
+        },
+        "filename_full": "agenda-full.pdf",
+        "filename_tag": "agenda-{tag}.pdf"
+      },
+      "trackPicker": {
+        "title": "Add a song",
+        "subtitle": "From the wedding playlist or via the search input.",
+        "tabs": {
+          "playlist": "Playlist",
+          "itunes": "Search"
+        },
+        "filter_placeholder": "Filter (title, artist, album)…",
+        "empty_playlist": "No song found.",
+        "playlist_unavailable": "Could not load songs (insufficient permission or network error).",
+        "proposed_by": "Proposed by {name}",
+        "itunes_placeholder": "Search for a song…",
+        "searching": "Searching…",
+        "min_chars": "Type at least 2 characters to start the search.",
+        "count_playlist": "{n} song(s)",
+        "count_itunes": "{n} result(s)"
+      }
+    },
+    "menuspfd": {
+      "button": "Menus PDF",
+      "title": "Menus · Summary",
+      "total_attendees": "Guests",
+      "total_assigned": "Assigned menus",
+      "total_unassigned": "Without assigned menu",
+      "by_menu": "Totals by menu",
+      "by_table": "By table",
+      "attending": "Guests",
+      "unassigned": "Unassigned",
+      "filename": "menus-summary.pdf",
+      "error": "Failed to generate PDF."
+    },
+    "menus": {
+      "title": "Menu management",
+      "summary_attending": "Attending guests",
+      "summary_assigned": "Assigned menus",
+      "summary_unassigned": "No menu assigned",
+      "summary_review": "Cases to review",
+      "summary_by_menu": "Menus",
+      "assign_hint": "Manage menu assignment per guest. First create menus and define which dietary restrictions they cover in the Menus tab; guests are then auto-assigned. Use filters to review special cases and adjust manually.",
+      "active_filters": "Active filters",
+      "filter_all": "All",
+      "filter_review": "Needs review",
+      "filter_manual": "Manual",
+      "filter_by_table": "Filter by table…",
+      "filter_by_menu": "Filter by menu…",
+      "menu": "Menu",
+      "select_menu": "Select…",
+      "status": "Status",
+      "review_free_text": "Guest note: custom restriction",
+      "review_no_std": "No standard menu",
+      "review_tie": "Tie: multiple menus",
+      "review_no_match": "No menu covers the restrictions",
+      "review_unknown": "Needs review",
+      "menus_hint": "Create menus and define which dietary restrictions they cover. The system automatically assigns menus based on dietary restrictions and priority. Ambiguous cases are flagged for manual review.",
+      "add_menu": "New menu",
+      "name": "Name",
+      "covers": "Covers",
+      "priority": "Priority",
+      "tables_hint": "Summary by table",
+      "diet_hint": "Summary of guests' dietary restrictions. Each category groups guests who indicated that restriction. The same guest can appear in multiple categories if they have multiple restrictions.",
+      "edit_menu": "Edit menu",
+      "new_menu": "New menu",
+      "select_restrictions": "Select…",
+      "covers_hint": "The menu is suggested if it covers all of the guest’s restrictions.",
+      "priority_hint": "Higher priority wins in case of a tie.",
+      "note": "Note",
+      "active": "Active",
+      "error_name": "Name is required.",
+      "status_review": "REVIEW",
+      "status_manual": "MANUAL",
+      "status_auto": "AUTO",
+      "filter_menu_all": "All menus",
+      "filter_menu_unassigned": "No menu assigned",
+      "filter_table_all": "All tables",
+      "filter_by_table_short": "Table",
+      "filter_by_menu_short": "Menu",
+      "filter_status_short": "Status",
+      "unassigned_label": "Unassigned menu",
+      "none_assigned": "No menu assigned yet.",
+      "no_menus_yet": "No menus yet.",
+      "manage_button": "Manage menus",
+      "needs_review": "Menu needs review",
+      "unassigned": "Unassigned menu",
+      "note_dialog_title": "Menu note",
+      "unnamed": "Untitled menu",
+      "confirm_delete": "Delete the menu \"{name}\"?",
+      "toast_saved": "Menu saved.",
+      "deleted_success": "The menu has been deleted.",
+      "assign": "Assign",
+      "menus": "Menus",
+      "tables": "Tables",
+      "diet": "Dietary restrictions"
+    },
+    "search": "Search"
+  },
+  "common": {
+    "subject": "Subject",
+    "time": "Time",
+    "status": "Status",
+    "date": "Date",
+    "name": "Name",
+    "email": "Email",
+    "confirm_delete_msg": "Are you sure you want to delete this response? This action cannot be undone.",
+    "deleted": "Deleted",
+    "all": "All",
+    "export_done": "File generated.",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "error": "Error",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "saved": "Saved",
+    "clear_selection": "Clear selection",
+    "logout": "Logout",
+    "reset": "Reset",
+    "add": "Add",
+    "added": "Added",
+    "clear": "Clear",
+    "play": "Play",
+    "pause": "Pause",
+    "save": "Save",
+    "add_guest": "Add guest",
+    "fullscreen": "Fullscreen",
+    "actions": "Actions",
+    "view": "View",
+    "clear_all": "Clear all",
+    "success": "Success",
+    "logout_ok": "Signed out",
+    "logout_ok_detail": "You have been signed out.",
+    "logout_fail": "Sign out failed",
+    "logout_fail_detail": "Unable to sign out.",
+    "account": "Account",
+    "signed_in_as": "Signed in as",
+    "profile": "Profile",
+    "unsaved_changes": "Unsaved changes",
+    "back": "Back",
+    "drag": "Drag",
+    "error_generic": "Error. Please try again.",
+    "no_data": "No data.",
+    "no_results": "No results for your search.",
+    "search": "Search…",
+    "warning": "Warning"
+  },
+  "profile": {
+    "send_reset": "Forgot password",
+    "toast_reset_ok": "Email sent",
+    "toast_reset_ok_detail": "Check your inbox (and spam folder).",
+    "toast_reset_fail": "Unable to send email"
+  },
+  "footer": {
+    "copyright": "© 2026 All rights reserved.",
+    "admin": "Admin panel",
+    "product": "Product",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "credits": "Credits"
+  },
+  "legal": {
+    "title": "Legal notice",
+    "updated": "Last updated: February 11, 2026",
+    "editor": {
+      "title": "Publisher",
+      "body": "This website is operated by Isaure Lohest. Full legal identification details (company name, address, VAT/company number) can be provided on request and will be added here before commercial launch."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "body": "This platform is hosted on a Hostinger VPS."
+    },
+    "ip": {
+      "title": "Intellectual property",
+      "body": "Unless stated otherwise, source code, text, and visual assets on this website are protected by copyright and may not be reused without prior written authorization."
+    },
+    "liability": {
+      "title": "Liability",
+      "body": "The publisher makes reasonable efforts to keep this website accurate and available, but cannot guarantee uninterrupted service or the absence of errors."
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Professional contact details are available on:"
+    }
+  },
+  "privacy": {
+    "title": "Privacy policy (GDPR)",
+    "updated": "Last updated: February 11, 2026",
+    "controller": {
+      "title": "Data controller",
+      "body": "The data controller is Isaure Lohest (contact below)."
+    },
+    "data": {
+      "title": "Data collected",
+      "body": "Depending on usage, this platform may process identity/contact information, RSVP and guest-management details, and technical logs required for security and operation."
+    },
+    "purpose": {
+      "title": "Purpose and legal basis",
+      "body": "Data is processed to provide the service, manage event organization workflows, and ensure platform security. Legal bases are contract performance, legitimate interest, and legal obligations where applicable."
+    },
+    "retention": {
+      "title": "Retention",
+      "body": "Data is retained only as long as necessary for the purposes above or to comply with legal obligations, then deleted or anonymized."
+    },
+    "rights": {
+      "title": "Your rights",
+      "body": "You may request access, rectification, deletion, restriction, portability, or objection by email. You may also lodge a complaint with your national data protection authority."
+    },
+    "contact": {
+      "title": "Privacy contact"
+    }
+  },
+  "credits": {
+    "title": "Credits",
+    "intro": "This page lists design and implementation credits for the platform.",
+    "design": {
+      "title": "Design credit",
+      "body": "Illustrations and the home page are credited to La Invitación de Liana. The rest of the design and platform has been produced by Isaure Lohest."
+    },
+    "dev": {
+      "title": "Development",
+      "body": "Platform implementation and product adaptation by Isaure Lohest."
+    }
+  },
+  "product": {
+    "hero": {
+      "kicker": "Event platform",
+      "title": "Plan your event.",
+      "subtitle": "No stress. No lost messages.",
+      "description": "A simple, elegant platform to manage invitations, guests, and logistics — all in one place.",
+      "ctaPrimary": "Discover the platform",
+      "pills": {
+        "realtime": "Real-time updates",
+        "seating": "Seating plan",
+        "diets": "Allergies & diets",
+        "admin": "Simple admin dashboard",
+        "planner": "IA planner",
+        "rsvp": "RSVP management",
+        "guests": "Guest list",
+        "tables": "Table management",
+        "exports": "PDF & exports",
+        "playlist": "DJ playlist",
+        "budget": "Budget tracking"
+      }
+    },
+    "preview": {
+      "text": "Replaces WhatsApps + scattered notes with a single, always up-to-date space.",
+      "cards": {
+        "invitationTitle": "Invitation management",
+        "invitationText": "Create and manage digital invitations with a clear process and fewer back-and-forth messages.",
+        "guestsTitle": "Guest list",
+        "guestsText": "Keep all guests organized in one place with attendance status, plus-ones, and key details.",
+        "exportsTitle": "Exports and PDFs",
+        "exportsText": "Generate practical exports and PDF summaries to coordinate quickly with vendors and family.",
+        "customDesignTitle": "Custom design",
+        "customDesignText": "We adapt the design, the colors and tone, and the content so the experience matches your wedding style.",
+        "smartPlatformTitle": "Smart and centralized platform",
+        "smartPlatformText": "Designed to simplify planning in one place: less friction, better visibility, and smoother coordination."
+      }
+    },
+    "bentos": {
+      "title": "Your entire admin dashboard, in one platform",
+      "subtitle": "Clear features to manage everything without unnecessary complexity.",
+      "items": {
+        "dashboard": {
+          "title": "Admin dashboard",
+          "text": "A global view of your planning status: RSVPs, dietary needs, transport, and more.",
+          "alt": "Admin dashboard screenshot"
+        },
+        "rsvp": {
+          "title": "Guest RSVPs",
+          "text": "Structured RSVP tracking: attendance, +1, message, transport and dietary restrictions — with stats.",
+          "alt": "Guest RSVP screenshot"
+        },
+        "diets": {
+          "title": "Dietary restrictions",
+          "text": "Create menus and automatically assign them to each guest based on dietary restrictions. Track menu totals globally and by table for catering.",
+          "alt": "Dietary restrictions screenshot"
+        },
+        "seating": {
+          "title": "Seating plan",
+          "text": "Organize guests between tables, adjust the table layout, and generate PDFs anytime.",
+          "alt": "Seating plan screenshot"
+        },
+        "playlist": {
+          "title": "Collaborative playlist",
+          "text": "Collect song suggestions, curate your personalized list, and export for your DJ.",
+          "alt": "Playlist screenshot"
+        },
+        "blog": {
+          "title": "GPL 2026’s blog",
+          "text": "Post updates and photos to keep everyone informed before the big day.",
+          "alt": "Blog screenshot"
+        },
+        "email": {
+          "title": "Email sending",
+          "text": "Send group emails to segments (attending only, all, etc.) directly from the dashboard.",
+          "alt": "Email sending screenshot"
+        },
+        "planner": {
+          "title": "IA planner",
+          "text": "Describe your context and let AI generate prioritized tasks and a clear calendar you can execute and adapt in seconds.",
+          "alt": "IA planner screenshot"
+        },
+        "rsvpForm": {
+          "title": "Custom RSVP form",
+          "text": "We configure your RSVP form to collect exactly what you need from guests, with optional fields and clear structure.",
+          "alt": "Custom RSVP form screenshot"
+        },
+        "budget": {
+          "title": "Budget tracking",
+          "text": "Set a total budget, plan by category, track paid vs unpaid, and see clear charts at a glance.",
+          "alt": "Budget dashboard screenshot"
+        },
+        "agenda": {
+          "title": "Event agenda",
+          "text": "Plan the day D step by step, set timings, assign roles and keep the full schedule under control at a glance.",
+          "alt": "Agenda dashboard screenshot"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to simplify your planning?",
+      "text": "Less admin, more peace of mind. Centralize everything in one platform.",
+      "button": "Discover the platform"
+    },
+    "contact": {
+      "text": "Want more details or a personalized demo? Email me and we can review it together.",
+      "cta": "Contact by email"
+    }
+  },
+  "errors": {
+    "title": "Error",
+    "generic": "An unexpected error occurred. Please try again.",
+    "permission": {
+      "generic": "You do not have the required permissions to perform this action.",
+      "read": "You do not have permission to view this content.",
+      "write": "You do not have permission to modify or add content.",
+      "send": "You do not have permission to send this action."
+    },
+    "not_found": "The requested resource was not found.",
+    "validation": "Some fields are invalid. Please check your input."
+  },
+  "auth": {
+    "reset_title": "Reset password",
+    "reset_invalid_title": "Invalid or expired link",
+    "reset_request_new": "Request a new link",
+    "reset_for": "Reset for",
+    "new_password": "New password",
+    "confirm_password": "Confirm password",
+    "reset_submit": "Update password",
+    "reset_ok": "Password updated",
+    "reset_fail": "Update failed"
+  },
+  "blog": {
+    "empty": "No posts to show yet…"
+  }
+}
