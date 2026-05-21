@@ -58,12 +58,11 @@ export function buildRsvpConfirmationEmail({
     .trim()
     .toLowerCase();
   const isEn = lang === "en";
+  const isCa = lang === "ca" || lang === "cat";
 
   const safeDate = escapeHtml(dateDisplayShort);
   const safeName = escapeHtml(guestFirstName || "");
   const safePwd = escapeHtml(websitePasswordHint || "");
-
-  const safeInitials = escapeHtml(initials);
 
   const safeSiteUrl = safeUrl(siteUrl);
   const safeMapUrl = safeUrl(mapUrl);
@@ -71,14 +70,15 @@ export function buildRsvpConfirmationEmail({
   const mapHref = safeMapUrl ? escapeAttr(safeMapUrl) : "";
   const siteHref = safeSiteUrl ? escapeAttr(safeSiteUrl) : "";
   const nameEs = safeName || "invitado/a";
+  const nameCa = safeName || "convidat/da";
   const nameEn = safeName || "guest";
-  const who = isEn ? nameEn : nameEs;
+  const who = isEn ? nameEn : isCa ? nameCa : nameEs;
 
   const innerHtml = attendingYes
     ? isEn
       ? `
           <p>🌸 Hello ${who},</p>
-          <p>Thank you for completing the GPL 2026 form! We have successfully received your information.</p>
+          <p>Thank you for completing the form! We have successfully received your information.</p>
           <p>⛪️ We are thrilled to see you on <strong>${safeDate}</strong>.</p>
           ${
             mapHref
@@ -92,11 +92,28 @@ export function buildRsvpConfirmationEmail({
                 : "our website"
             } – 🔐 ${safePwd}.
           </p>
-          <p>${safeInitials}</p>
         `
-      : `
+      : isCa
+        ? `
           <p>🌸 Hola ${who},</p>
-          <p>¡Gracias por completar el formulario GPL 2026! Hemos recibido tu información correctamente.</p>
+          <p>Gràcies per completar el formulari! Hem rebut la vostra informació correctament.</p>
+          <p>⛪️ Ens fa molta il.lusió veure-us el <strong>${safeDate}</strong>.</p>
+          ${
+            mapHref
+              ? `<p>📍 <a href="${mapHref}" target="_blank" rel="noopener noreferrer">Mapa</a></p>`
+              : ""
+          }
+          <p>Tota la informació està disponible a 
+            ${
+              siteHref
+                ? `<a href="${siteHref}" target="_blank" rel="noopener noreferrer">la nostra web</a>`
+                : "la nostra web"
+            } – 🔐 ${safePwd}.
+          </p>
+        `
+        : `
+          <p>🌸 Hola ${who},</p>
+          <p>¡Gracias por completar el formulario! Hemos recibido tu información correctamente.</p>
           <p>⛪️ Nos hace mucha ilusión verte el <strong>${safeDate}</strong>.</p>
           ${
             mapHref
@@ -110,12 +127,11 @@ export function buildRsvpConfirmationEmail({
                 : "nuestra web"
             } – 🔐 ${safePwd}.
           </p>
-          <p>${safeInitials}</p>
         `
     : isEn
       ? `
           <p>🌸 Hello ${who},</p>
-          <p>Thank you for completing the GPL 2026 form! We have successfully received your reply.</p>
+          <p>Thank you for completing the form! We have successfully received your reply.</p>
           <p>We’re sorry you can’t make it on <strong>${safeDate}</strong>, but thanks for letting us know ❤️</p>
           <p>All information is available on 
             ${
@@ -124,9 +140,21 @@ export function buildRsvpConfirmationEmail({
                 : "our website"
             } – 🔐 ${safePwd}.
           </p>
-          <p>${safeInitials}</p>
         `
-      : `
+      : isCa
+        ? `
+          <p>🌸 Hola ${who},</p>
+          <p>Gràcies per completar el formulari! Hem rebut la vostra resposta correctament.</p>
+          <p>Sentim molt que no pugueu acompanyar-nos el <strong>${safeDate}</strong>, però gràcies per avisar-nos ❤️</p>
+          <p>Tota la informació està disponible a 
+            ${
+              siteHref
+                ? `<a href="${siteHref}" target="_blank" rel="noopener noreferrer">la nostra web</a>`
+                : "la nostra web"
+            } – 🔐 ${safePwd}.
+          </p>
+        `
+        : `
           <p>🌸 Hola ${who},</p>
           <p>¡Gracias por completar el formulario! Hemos recibido tu respuesta correctamente.</p>
           <p>Sentimos mucho que no puedas acompañarnos el <strong>${safeDate}</strong>, pero gracias por avisarnos ❤️</p>
@@ -137,14 +165,20 @@ export function buildRsvpConfirmationEmail({
                 : "nuestra web"
             } – 🔐 ${safePwd}.
           </p>
-          <p>${safeInitials}</p>
         `;
 
-  const subjectName = safeSubjectPart(guestFirstName, isEn ? "guest" : "invitado/a");
+  const subjectName = safeSubjectPart(
+    guestFirstName,
+    isEn ? "guest" : isCa ? "convidat/da" : "invitado/a",
+  );
   const subject = isEn
     ? `🎉 ${safeSubjectPart(initials, "GPL 2026")} – ${
         attendingYes ? "Thank you for confirming" : "Thank you for your reply"
       }, ${subjectName}`
+    : isCa
+      ? `🎉 ${safeSubjectPart(initials, "GPL 2026")} – ${
+          attendingYes ? "Gràcies per confirmar" : "Gràcies per la vostra resposta"
+        }, ${subjectName}`
     : `🎉 ${safeSubjectPart(initials, "GPL 2026")} – ${
         attendingYes ? "Gracias por confirmar" : "Gracias por tu respuesta"
       }, ${subjectName}`;

@@ -3,7 +3,7 @@
 Ce repo contient :
 
 - **Front** : Vue 3 + Vite → build statique dans `dist/`
-- **Back** : API Node (Hono) dans `backend/server.ts` → écoute par défaut sur `127.0.0.1:3000`
+- **Back** : API Node (Hono) dans `backend/server.ts` → écoute par défaut sur `127.0.0.1:3000` en local, `127.0.0.1:3012` en prod VPS.
 - **Objectif en prod** : Apache sert `dist/` et reverse-proxy **uniquement** `/api/*` vers le backend.
 
 ## Documentation projet
@@ -113,6 +113,8 @@ rsync -avz --delete --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r \
 
 - [ ] Vérifier `backend/.env` sur le VPS (au minimum)
   - `NODE_ENV=production`
+  - `PORT=3012`
+  - `HOST=127.0.0.1`
   - `CORS_ORIGINS=https://www.${DOMAIN},https://${DOMAIN}`
   - `SESSION_SECRET=...` (obligatoire)
   - `SECURE_PASSWORD=...` (obligatoire)
@@ -237,8 +239,8 @@ Exemple de vhost (adapter chemins/domaines). But : servir `dist/` et proxy `/api
 
   # API → backend local
   ProxyPreserveHost On
-  ProxyPass        /api http://127.0.0.1:3000/api
-  ProxyPassReverse /api http://127.0.0.1:3000/api
+  ProxyPass        /api http://127.0.0.1:3012/api
+  ProxyPassReverse /api http://127.0.0.1:3012/api
 
   # SPA fallback (ne pas casser /api ni les fichiers existants)
   RewriteEngine On

@@ -129,16 +129,13 @@ const { t } = useLang();
 const toast = useToast();
 const route = useRoute();
 const router = useRouter();
-const ADMIN_ACCESS_PASSWORD_PREFILL = "9F&bX@qL!3p$Wr7z^2kT";
 
 function getInitialPasswordPrefill() {
-  const hasInviteToken =
-    typeof route.query.token === "string" && route.query.token.length > 0;
-  return hasInviteToken ? "" : ADMIN_ACCESS_PASSWORD_PREFILL;
+  return "";
 }
 
 const sendingReset = ref(false);
-const email = ref("grandepleinelune.es@gmail.com");
+const email = ref("");
 const password = ref(getInitialPasswordPrefill());
 const passwordConfirm = ref("");
 const inviteChecked = ref(false);
@@ -172,9 +169,7 @@ const inviteToken = computed(() => {
 const isInviteFlow = computed(() => !!inviteToken.value && !forceLogin.value);
 
 watch(isInviteFlow, (inviteFlow) => {
-  if (!inviteFlow && !password.value) {
-    password.value = ADMIN_ACCESS_PASSWORD_PREFILL;
-  }
+  if (!inviteFlow && !password.value) password.value = "";
 });
 
 function shouldDropToken(code) {
@@ -413,7 +408,7 @@ async function routeAfterLogin() {
     // 2) permissions/claims via backend
     const me = await api.meFresh();
 
-    if (me?.isSuperadmin) return router.replace("/sa");
+    if (me?.isSuperadmin) return router.replace("/admin");
 
     // 3) otherwise -> next or /admin
     return router.replace(nextPath.value);

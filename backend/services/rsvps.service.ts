@@ -82,6 +82,7 @@ function normalizePreferredLang(v: unknown, fallback = "es"): string {
   const s = String(v ?? "")
     .trim()
     .toLowerCase();
+  if (s === "ca" || s === "cat") return "ca";
   if (s === "en") return "en";
   if (s === "es") return "es";
   return fallback;
@@ -764,7 +765,6 @@ export async function deleteGuest({ guestId }: { guestId: string }) {
 /* ---------------- email confirmation ---------------- */
 
 const { brideFirstName, groomFirstName, initials } = weddingConfig.couple;
-const { dateDisplayShort } = weddingConfig.event;
 const { mapUrl: celebrationMapUrl } = weddingConfig.celebration;
 
 let rawSiteUrl = process.env.SITE_URL || "https://www.gpl2026.es";
@@ -856,6 +856,11 @@ async function sendRsvpConfirmationEmail(rsvpId: string) {
     const guestFirstName = safeStr(primary.firstName, 120);
     const guestLastName = safeStr(primary.lastName, 180);
     const preferredLang = normalizePreferredLang(primary.preferredLang);
+    const eventLocale =
+      preferredLang === "ca"
+        ? weddingConfig.event.perLocale.ca
+        : weddingConfig.event.perLocale.es;
+    const dateDisplay = eventLocale.invitationDateTime;
 
     const attendingYes = guests.some((g) => !!g.attending);
 
@@ -902,7 +907,7 @@ async function sendRsvpConfirmationEmail(rsvpId: string) {
         brideFirstName,
         groomFirstName,
         initials,
-        dateDisplayShort,
+        dateDisplayShort: dateDisplay,
         siteUrl: SITE_URL,
         mapUrl: celebrationMapUrl,
         ...(WEBSITE_PASSWORD_HINT

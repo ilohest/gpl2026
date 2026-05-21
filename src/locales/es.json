@@ -40,31 +40,34 @@
   },
   "homepagersvp": {
     "title": "Confirmad vuestra asistencia",
-    "title-mobile": "Confirmad <br>vuestra asistencia",
+    "title-mobile": "Confirmad vuestra asistencia",
     "celebration": "",
     "instructions": "Hacednos saber si podréis asistir a través del formulario de confirmación. <br>Decidnos si venís acompañados.<br><br>Por favor, confirmad vuestra asistencia antes del",
     "deadline": "3 de agosto de 2026.",
     "button": "Confirmar asistencia"
   },
   "home_invite": {
-    "intro_line_1": "Estimados compañeros, os esperamos, con mucha",
-    "intro_line_2": "ilusión para celebrar la gran PL",
-    "date_label": "el sábado 27 de agosto de 2026",
+    "intro_line_1": "Estimados compañeros, os esperamos, con mucha ilusión para celebrar la gran PL",
+    "intro_line_2": "",
+    "date_label": "el sábado 29 de agosto de 2026",
     "date_day": "el sábado",
-    "date_month": "27 de agosto",
+    "date_month": "29 de agosto",
     "date_year": "de 2026",
     "time": "a las 18h45",
     "restaurant": "en el restaurante Les Terrasses de Sant Romà",
     "address_title": "DIRECCIÓN",
     "participation_title": "PARTICIPACIÓN",
-    "participation_line_1": "Se cobrará el mismo día antes de comenzar la reunión plenaria.",
-    "participation_line_2": "Os agradeceremos que lleguéis con tiempo suficiente y que llevéis el dinero justo",
-    "participation_line_3": "correspondiente (ni Visa, ni cheques bancarios), para facilitar el pago a la",
-    "participation_line_4": "dirección del restaurante.",
+    "participation_line_1": "Se cobrará el mismo día antes de comenzar la reunión plenaria. Os agradeceremos que lleguéis con tiempo suficiente y que llevéis el dinero justo correspondiente (ni Visa, ni cheques bancarios), para facilitar el pago a la dirección del restaurante.",
+    "participation_line_2": "",
+    "participation_line_3": "",
+    "participation_line_4": "",
     "confirmation_title": "CONFIRMACIÓN",
     "confirmation_line": "Por favor, confirmad vuestra asistencia antes del",
+    "closing_line": "Esperamos veros y celebrar con vosotros!",
     "closing_line_1": "Esperamos veros y celebrar",
-    "closing_line_2": "con vosotros!"
+    "closing_line_2": "con vosotros!",
+    "spiral_label": "Pensamiento de cierre",
+    "spiral_text": "Despertémonos con el Libro a fin de empezar nuestra jornada con un pensamiento saludable. - Desplacémonos con la noble herramienta a fin de obrar útilmente entre nuestras ocupaciones fútiles. - Durmámonos con el mensaje a fin de tenerlo ante los ojos en el día del juicio."
   },
   "waves": {
     "text": "Dios, que es la perfección de la ciencia y del amor, solo ofrece y acepta la ciencia y el amor perfectos. El tesoro sepultado en la tierra. El gran concentrado del Universo.",
@@ -72,7 +75,7 @@
   },
   "schedule": {
     "title": "Información práctica",
-    "day": "Sábado 27 de septiembre",
+    "day": "Sábado 29 de agosto",
     "when": {
       "title": "Cuándo"
     },

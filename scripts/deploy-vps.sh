@@ -199,11 +199,11 @@ if [[ "$DO_RESTART" -eq 1 ]]; then
       if ! pm2 describe \"$PM2_NAME\" >/dev/null 2>&1; then \
         pm2 start node --name \"$PM2_NAME\" -- --import tsx server.ts; \
       else \
-        pm2 restart \"$PM2_NAME\"; \
+        pm2 restart \"$PM2_NAME\" --update-env; \
       fi; \
       pm2 save; pm2 status"
   else
-    ssh "$SSH" "pm2 restart \"$PM2_NAME\" && pm2 status"
+    ssh "$SSH" "pm2 restart \"$PM2_NAME\" --update-env && pm2 status"
   fi
 else
   echo "Skipping pm2 restart (--no-restart)"

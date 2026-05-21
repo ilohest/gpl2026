@@ -45,18 +45,18 @@ export const weddingConfig = {
   },
 
   event: {
-    date: "2026-09-27",
-    dateDisplayShort: "27 ⸱ 09 ⸱ 2026",
+    date: "2026-08-29",
+    dateDisplayShort: "29 ⸱ 08 ⸱ 2026",
 
     perLocale: {
       ca: {
-        invitationDateTime: "dissabte 27 de setembre del 2026 a les 18.45h",
-        scheduleDay: "Dissabte 27 de setembre",
+        invitationDateTime: "dissabte 29 d'agost del 2026 a les 18.45h",
+        scheduleDay: "Dissabte 29 d'agost",
         ceremonyTime: "18h45",
       },
       es: {
-        invitationDateTime: "sábado 27 de septiembre de 2026 a las 18:45",
-        scheduleDay: "Sábado 27 de septiembre",
+        invitationDateTime: "sábado 29 de agosto de 2026 a las 18:45",
+        scheduleDay: "Sábado 29 de agosto",
         ceremonyTime: "18h45",
       },
     },
@@ -103,7 +103,7 @@ export const weddingConfig = {
   },
 
   countdown: {
-    targetDateTimeUtc: "2026-09-27T16:45:00Z",
+    targetDateTimeUtc: "2026-08-29T16:45:00Z",
   },
 
   // utilisé uniquement pour la démo (page login préremplie)

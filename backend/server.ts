@@ -12,9 +12,23 @@ import { createApiRoutes, type AppType as ApiAppType } from "./hono/apiRoutes.js
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const runtimeNodeEnv = process.env.NODE_ENV;
+const runtimeEnv = {
+  NODE_ENV: process.env.NODE_ENV,
+  PORT: process.env.PORT,
+  HOST: process.env.HOST,
+  LISTEN_HOST: process.env.LISTEN_HOST,
+  npm_lifecycle_event: process.env.npm_lifecycle_event,
+};
 dotenv.config({ path: path.resolve(__dirname, ".env"), override: true });
-if (runtimeNodeEnv) process.env.NODE_ENV = runtimeNodeEnv;
+for (const [key, value] of Object.entries(runtimeEnv)) {
+  if (key !== "npm_lifecycle_event" && value) process.env[key] = value;
+}
+
+if (runtimeEnv.npm_lifecycle_event === "dev:server") {
+  process.env.NODE_ENV = "development";
+  process.env.PORT = "3001";
+  process.env.HOST = "127.0.0.1";
+}
 
 process.on("exit", (code) => console.log("[process exit]", code));
 process.on("beforeExit", (code) => console.log("[beforeExit]", code));

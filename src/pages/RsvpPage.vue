@@ -6,8 +6,7 @@
         <h1 class="rsvp-page__title">{{ t("rsvp.title") }}</h1>
         <p class="rsvp-page__excitement">{{ t("rsvp.excitement") }}</p>
         <div class="rsvp-page__deadline">
-          <p>{{ t("rsvp.instructions") }}</p>
-          <p>{{ t("rsvp.deadline") }}</p>
+          <p>{{ t("rsvp.instructions") }} {{ t("rsvp.deadline") }}</p>
         </div>
       </header>
 
@@ -269,24 +268,9 @@
           </p>
         </form>
 
-        <ProgressSpinner
-          v-if="submitting"
-          style="width: 30px; height: 30px"
-          stroke-width="8"
-          fill="transparent"
-          animation-duration=".5s"
-        />
-
         <div id="confirmation-message" v-show="done">
           <h2>{{ t("rsvp.confirmation.title") }}</h2>
           <SafeRichText tag="p" :text="t('rsvp.confirmation.message')" />
-          <h2>
-            {{
-              t("rsvp.confirmation.names")
-                .replace("{bride}", brideFirstName)
-                .replace("{groom}", groomFirstName)
-            }}
-          </h2>
         </div>
 
         <p
@@ -310,7 +294,6 @@ import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
 
 import SelectButton from "primevue/selectbutton";
 import Fieldset from "primevue/fieldset";
-import ProgressSpinner from "primevue/progressspinner";
 import { useToast } from "primevue/usetoast";
 import Button from "primevue/button";
 import Textarea from "primevue/textarea";
@@ -323,7 +306,6 @@ import {
 } from "../../shared/dietTypes";
 import { useLang } from "@/composables/useLang";
 import { useRevealOnScroll } from "@/composables/useRevealOnScroll";
-import weddingConfig from "../../shared/weddingConfig.ts";
 
 const RECAPTCHA_SITE_KEY =
   import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
@@ -361,7 +343,6 @@ onBeforeUnmount(() => {
 
 const toast = useToast();
 const { t, loadLanguage, lang } = useLang();
-const { brideFirstName, groomFirstName } = weddingConfig.couple;
 const pageRef = ref(null);
 useRevealOnScroll({
   root: pageRef,
@@ -620,7 +601,6 @@ async function onSubmit(e) {
 
 .rsvp-page__excitement {
   margin-top: clamp(34px, 4.5vw, 54px);
-  color: #26302f;
   font-family: "PPPlayground", "MsClaudy", cursive;
   font-size: clamp(1.55rem, 2.7vw, 2rem);
   font-weight: 300;

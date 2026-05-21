@@ -3,8 +3,7 @@
   <main class="gpl-home">
     <section class="gpl-invite" aria-labelledby="home-title">
       <p class="gpl-invite__intro" id="home-title">
-        {{ t("home_invite.intro_line_1") }}<br />
-        {{ t("home_invite.intro_line_2") }}
+        {{ t("home_invite.intro_line_1") }}
       </p>
 
       <div class="gpl-invite__date" :aria-label="t('home_invite.date_label')">
@@ -47,22 +46,13 @@
       <section class="gpl-invite__small-block gpl-invite__small-block--wide">
         <h2>{{ t("home_invite.participation_title") }}</h2>
         <p>31€</p>
-        <p>
-          {{ t("home_invite.participation_line_1") }}<br />
-          {{ t("home_invite.participation_line_2") }}
-          <br class="gpl-desktop-break" />
-          {{ t("home_invite.participation_line_3") }}
-          <br class="gpl-desktop-break" />
-          {{ t("home_invite.participation_line_4") }}
-        </p>
+        <p aria-hidden="true">·</p>
+        <p>{{ t("home_invite.participation_line_1") }}</p>
       </section>
 
       <section class="gpl-invite__small-block gpl-invite__rsvp-block">
         <h2>{{ t("home_invite.confirmation_title") }}</h2>
-        <p>
-          {{ t("home_invite.confirmation_line") }}<br />
-          {{ t("homepagersvp.deadline") }}
-        </p>
+        <p>{{ t("home_invite.confirmation_line") }} {{ t("homepagersvp.deadline") }}</p>
       </section>
 
       <RouterLink to="/rsvp" class="gpl-button gpl-button--solid">
@@ -76,8 +66,7 @@
       />
 
       <p class="gpl-script gpl-script--closing">
-        {{ t("home_invite.closing_line_1") }}<br />
-        {{ t("home_invite.closing_line_2") }}
+        {{ t("home_invite.closing_line") }}
       </p>
 
       <div class="gpl-final-food" aria-hidden="true">
@@ -101,12 +90,20 @@
           </div>
         </div>
       </div>
+
+      <section class="gpl-spiral" aria-label="Pensament de cloenda">
+        <canvas
+          ref="spiralCanvasRef"
+          class="gpl-spiral__canvas"
+          aria-hidden="true"
+        ></canvas>
+      </section>
     </section>
   </main>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useLang } from "@/composables/useLang";
 import SafeRichText from "@/components/utils/SafeRichText.vue";
 import weddingConfig from "../../shared/weddingConfig.ts";
@@ -115,10 +112,92 @@ const { t, lang, loadLanguage } = useLang();
 
 const countdownText = ref("");
 const foodRef = ref(null);
+const spiralCanvasRef = ref(null);
 
 const targetDate = new Date(weddingConfig.countdown.targetDateTimeUtc);
 let countdownTimer;
 let foodTimer;
+
+const spiralText = computed(() => {
+  return t("home_invite.spiral_text").toLocaleUpperCase(lang.value);
+});
+
+function drawSpiral() {
+  const canvas = spiralCanvasRef.value;
+  if (!canvas) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const size = Math.max(240, Math.round(rect.width));
+  const isMobile = size < 360;
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = Math.round(size * ratio);
+  canvas.height = Math.round(size * ratio);
+  canvas.style.height = `${size}px`;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  ctx.clearRect(0, 0, size, size);
+  ctx.fillStyle = "#111";
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  const fontSize = isMobile
+    ? Math.max(10.5, Math.min(12.5, size * 0.039))
+    : Math.max(18, Math.min(23, size * 0.041));
+  ctx.font = `${fontSize}px PPPangaia, Antic Didone, serif`;
+
+  const center = size / 2;
+  const points = [];
+  const turns = isMobile ? 3.55 : 5.15;
+  const steps = 1500;
+
+  for (let i = 0; i <= steps; i += 1) {
+    const progress = i / steps;
+    const angle = progress * turns * Math.PI * 2;
+    const radius = isMobile
+      ? size * 0.36 - progress * size * 0.26
+      : size * 0.42 - progress * size * 0.35;
+    points.push({
+      x: center + Math.cos(angle) * radius,
+      y: center + Math.sin(angle) * radius,
+    });
+  }
+
+  const segments = [];
+  let totalLength = 0;
+  for (let i = 1; i < points.length; i += 1) {
+    const prev = points[i - 1];
+    const next = points[i];
+    const length = Math.hypot(next.x - prev.x, next.y - prev.y);
+    totalLength += length;
+    segments.push({ ...next, length, totalLength });
+  }
+
+  const text = spiralText.value;
+  const textWidth = ctx.measureText(text).width;
+  const spacingRatio = Math.min(1, (totalLength * 0.9) / Math.max(textWidth, 1));
+  let cursor = 0;
+
+  for (const char of text) {
+    const charWidth = Math.max(ctx.measureText(char).width * spacingRatio, 2.4);
+    cursor += charWidth / 2;
+    const segment = segments.find((item) => item.totalLength >= cursor);
+    if (!segment) break;
+
+    const index = segments.indexOf(segment);
+    const previous = index > 0 ? segments[index - 1] : points[0];
+    const angle = Math.atan2(segment.y - previous.y, segment.x - previous.x);
+
+    ctx.save();
+    ctx.translate(segment.x, segment.y);
+    ctx.rotate(angle);
+    ctx.fillText(char, 0, 0);
+    ctx.restore();
+
+    cursor += charWidth / 2;
+  }
+}
 
 function renderCountdown() {
   const now = new Date();
@@ -141,7 +220,10 @@ function renderCountdown() {
   });
 }
 
-watch(lang, () => renderCountdown());
+watch(lang, () => {
+  renderCountdown();
+  requestAnimationFrame(drawSpiral);
+});
 
 function hideRandomFood() {
   const host = foodRef.value;
@@ -160,6 +242,9 @@ function hideRandomFood() {
 onMounted(() => {
   loadLanguage(lang.value);
   renderCountdown();
+  requestAnimationFrame(drawSpiral);
+  document.fonts?.ready.then(drawSpiral);
+  window.addEventListener("resize", drawSpiral);
   countdownTimer = setInterval(renderCountdown, 1000);
   foodTimer = setInterval(hideRandomFood, 2000);
 });
@@ -167,5 +252,6 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(countdownTimer);
   clearInterval(foodTimer);
+  window.removeEventListener("resize", drawSpiral);
 });
 </script>

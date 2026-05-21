@@ -40,31 +40,34 @@
   },
   "homepagersvp": {
     "title": "Confirmeu la vostra assistència",
-    "title-mobile": "Confirmeu <br>la vostra assistència",
+    "title-mobile": "Confirmeu la vostra assistència",
     "celebration": "",
     "instructions": "Feu-nos saber si podreu assistir a través del formulari de confirmació. <br>Digueu-nos si veniu acompanyats.<br><br>Si us plau, confirmeu la vostra assistència abans del",
     "deadline": "3 d'agost del 2026.",
     "button": "Confirmar assistència"
   },
   "home_invite": {
-    "intro_line_1": "Estimats companys, us esperem, amb molta",
-    "intro_line_2": "il.lusió per celebrar la gran PL",
-    "date_label": "el dissabte 27 d'agost del 2026",
+    "intro_line_1": "Estimats companys, us esperem, amb molta il.lusió per celebrar la gran PL",
+    "intro_line_2": "",
+    "date_label": "el dissabte 29 d'agost del 2026",
     "date_day": "el dissabte",
-    "date_month": "27 d'agost",
+    "date_month": "29 d'agost",
     "date_year": "del 2026",
     "time": "a les 18h45",
     "restaurant": "al restaurant Les Terrasses de Sant Romà",
     "address_title": "ADREÇA",
     "participation_title": "PARTICIPACIÓ",
-    "participation_line_1": "Es cobrarà el mateix dia abans de començar la reunió plenària.",
-    "participation_line_2": "Us agrairem que arribeu amb temps suficient i que porteu els diners justos",
-    "participation_line_3": "corresponents (ni Visa, ni talons bancaris), per tal de facilitar el pagament a la",
-    "participation_line_4": "direcció del restaurant.",
+    "participation_line_1": "Es cobrarà el mateix dia abans de començar la reunió plenària. Us agrairem que arribeu amb temps suficient i que porteu els diners justos corresponents (ni Visa, ni talons bancaris), per tal de facilitar el pagament a la direcció del restaurant.",
+    "participation_line_2": "",
+    "participation_line_3": "",
+    "participation_line_4": "",
     "confirmation_title": "CONFIRMACIÓ",
     "confirmation_line": "Si us plau, confirmeu la vostra assistència abans del",
+    "closing_line": "Esperem veure-us i celebrar amb vosaltres!",
     "closing_line_1": "Esperem veure-us i celebrar",
-    "closing_line_2": "amb vosaltres!"
+    "closing_line_2": "amb vosaltres!",
+    "spiral_label": "Pensament de cloenda",
+    "spiral_text": "Despertem-nos amb el Llibre a fi de començar la nostra jornada amb un pensament saludable. - Desplacem-nos amb la noble eina a fi d'obrar útilment enmig de les nostres ocupacions fútils. - Adormim-nos amb el missatge a fi de tenir-lo davant dels ulls el dia del judici."
   },
   "waves": {
     "text": "Déu, que és la perfecció de la ciència i de l'amor, només ofereix i accepta la ciència i l'amor perfectes. El tresor sepultat dins la terra. El gran concentrat de l'Univers.",
@@ -72,7 +75,7 @@
   },
   "schedule": {
     "title": "Informació pràctica",
-    "day": "Dissabte 27 de setembre",
+    "day": "Dissabte 29 d'agost",
     "when": {
       "title": "Quan"
     },
