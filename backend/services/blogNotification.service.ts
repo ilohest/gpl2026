@@ -169,7 +169,7 @@ export async function queueBlogNotificationJob({
       return { jobId, total: 0 };
     }
 
-    let rawSiteUrl = process.env.SITE_URL || "https://www.gpl2026.com";
+    let rawSiteUrl = process.env.SITE_URL || "https://www.gpl2026.es";
     if (!/^https?:\/\//i.test(rawSiteUrl)) rawSiteUrl = "https://" + rawSiteUrl;
     const siteUrl = rawSiteUrl.replace(/\/+$/, "");
     const blogUrl = `${siteUrl}/blog`;
@@ -288,7 +288,7 @@ async function runBlogNotificationJob({
             meta: { campaign: "blog-notification" },
           });
         }
-      })
+      }),
     );
 
     await Promise.allSettled(tasks);
@@ -309,7 +309,7 @@ async function runBlogNotificationJob({
           lastBlogEmailKo: Number(final?.ko || 0),
           lastBlogEmailBy: uid || null,
         },
-        { merge: true }
+        { merge: true },
       );
       triggerAdminDashboardSummaryRefresh();
     } catch (err: unknown) {

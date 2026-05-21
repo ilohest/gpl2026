@@ -45,7 +45,14 @@ export async function verifyRecaptcha(
   });
 
   const data = (await resp.json().catch(() => null)) as Record<string, unknown> | null;
-  if (!data?.success) return { ok: false, error: "recaptcha_failed", data };
+  if (!data?.success) {
+    console.warn("[recaptcha] verification failed", {
+      errorCodes: data?.["error-codes"] || null,
+      hostname: data?.hostname || null,
+      action: data?.action || null,
+    });
+    return { ok: false, error: "recaptcha_failed", data };
+  }
 
   const score = typeof data.score === "number" ? data.score : null;
   const act = typeof data.action === "string" ? data.action : null;

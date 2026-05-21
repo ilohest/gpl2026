@@ -1165,7 +1165,7 @@ const weekDayLabels = computed(() => {
     const d = new Date(base);
     d.setDate(base.getDate() + i);
     out.push(
-      d.toLocaleDateString(lang.value === "en" ? "en-GB" : "es-ES", {
+      d.toLocaleDateString(lang.value === "ca" ? "ca-ES" : "es-ES", {
         weekday: "short",
       }),
     );
@@ -1216,7 +1216,7 @@ const calendarDays = computed(() => {
 });
 
 const calendarTitle = computed(() => {
-  const locale = lang.value === "en" ? "en-GB" : "es-ES";
+  const locale = lang.value === "ca" ? "ca-ES" : "es-ES";
   if (calendarMode.value === "week") {
     const start = startOfWeek(calendarCursor.value);
     const end = endOfWeek(calendarCursor.value);
@@ -1232,7 +1232,7 @@ function formatDayLabel(isoDate) {
   if (!isoDate) return "";
   const [y, m, d] = String(isoDate).split("-").map(Number);
   const value = new Date(y, (m || 1) - 1, d || 1);
-  return value.toLocaleDateString(lang.value === "en" ? "en-GB" : "es-ES", {
+  return value.toLocaleDateString(lang.value === "ca" ? "ca-ES" : "es-ES", {
     weekday: "long",
     day: "2-digit",
     month: "long",

@@ -18,6 +18,53 @@ function baseLocale(): PrimeVueLocaleOptions {
 }
 
 const LOCALES: Record<string, PrimeVueLocaleOptions> = {
+  ca: {
+    ...baseLocale(),
+    clear: "Esborrar",
+    today: "Avui",
+    weekHeader: "Set.",
+    dayNames: [
+      "diumenge",
+      "dilluns",
+      "dimarts",
+      "dimecres",
+      "dijous",
+      "divendres",
+      "dissabte",
+    ],
+    dayNamesShort: ["dg.", "dl.", "dt.", "dc.", "dj.", "dv.", "ds."],
+    dayNamesMin: ["Dg", "Dl", "Dt", "Dc", "Dj", "Dv", "Ds"],
+    monthNames: [
+      "gener",
+      "febrer",
+      "març",
+      "abril",
+      "maig",
+      "juny",
+      "juliol",
+      "agost",
+      "setembre",
+      "octubre",
+      "novembre",
+      "desembre",
+    ],
+    monthNamesShort: [
+      "gen.",
+      "febr.",
+      "març",
+      "abr.",
+      "maig",
+      "juny",
+      "jul.",
+      "ag.",
+      "set.",
+      "oct.",
+      "nov.",
+      "des.",
+    ],
+    firstDayOfWeek: 1,
+  },
+
   es: {
     ...baseLocale(),
     clear: "Borrar",
@@ -161,9 +208,10 @@ const LOCALES: Record<string, PrimeVueLocaleOptions> = {
   },
 };
 
-const FALLBACK_LOCALE: PrimeVueLocaleOptions = LOCALES.es!;
+const FALLBACK_LOCALE: PrimeVueLocaleOptions = LOCALES.ca!;
 
 export function getPrimeVueLocale(lang: string): PrimeVueLocaleOptions {
   const key = String(lang || "").trim().toLowerCase();
+  if (key === "en" || key === "cat") return LOCALES.ca!;
   return LOCALES[key] ?? FALLBACK_LOCALE;
 }

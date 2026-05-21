@@ -2244,7 +2244,7 @@ function resolveRsvpDeadlineDate() {
     if (d) return d;
   }
 
-  const enDeadline = String(weddingConfig?.rsvp?.perLocale?.en?.deadline || "");
+  const enDeadline = String(weddingConfig?.rsvp?.perLocale?.ca?.deadline || "");
   const fallback = toStartOfDay(enDeadline);
   if (fallback) return fallback;
 
@@ -2270,9 +2270,7 @@ const daysUntilDeadlineDisplay = computed(() => {
 const rsvpDeadlineLabel = computed(() => {
   const current = String(lang.value || "es")
     .toLowerCase()
-    .startsWith("en")
-    ? "en"
-    : "es";
+    .startsWith("ca") ? "ca" : "es";
   return (
     weddingConfig?.rsvp?.perLocale?.[current]?.deadline ||
     weddingConfig?.rsvp?.perLocale?.es?.deadline ||

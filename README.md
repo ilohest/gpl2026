@@ -30,11 +30,24 @@ Les commandes ci-dessous reflètent le flow “build local → rsync → restart
 
 ### Option : script de déploiement (recommandé)
 
+Le script est configuré par défaut pour :
+
+- VPS : `root@82.112.255.95`
+- Domaine : `gpl2026.es`
+- Dossier distant : `/var/www/html/isaure/sites_mariage/gpl2026`
+- Apache : `dist/` servi en statique, `/api/*` proxifié vers le backend PM2
+
 - [ ] Lancer :
 
 ```bash
 chmod +x ./scripts/deploy-vps.sh
 ./scripts/deploy-vps.sh
+```
+
+Ou via npm :
+
+```bash
+npm run deploy:vps
 ```
 
 Si tu dois aussi uploader des secrets :
@@ -55,8 +68,31 @@ Si le PM2 du VPS pointe encore vers un ancien `backend/server.js`, force la recr
 export VPS_HOST="82.112.255.95"
 export VPS_USER="root"
 export APP_DIR="/var/www/html/isaure/sites_mariage/gpl2026"
-export DOMAIN="gpl2026.com"
+export DOMAIN="gpl2026.es"
 ```
+
+## DNS Hostinger pour `gpl2026.es`
+
+Dans Hostinger, zone DNS de `gpl2026.es`, configurer :
+
+| Type | Nom | Valeur | TTL |
+| --- | --- | --- | --- |
+| A | `@` | `82.112.255.95` | Auto / 300 |
+| A | `www` | `82.112.255.95` | Auto / 300 |
+
+À supprimer ou remplacer si présents :
+
+- tout ancien `A` sur `@` ou `www` qui pointe vers une autre IP ;
+- tout `CNAME` sur `www` qui entre en conflit avec l’enregistrement `A www`.
+
+Après propagation, vérifier :
+
+```bash
+dig +short gpl2026.es
+dig +short www.gpl2026.es
+```
+
+Les deux doivent retourner `82.112.255.95`.
 
 ### 1) Frontend (Vite → `dist/`)
 
@@ -186,8 +222,8 @@ Exemple de vhost (adapter chemins/domaines). But : servir `dist/` et proxy `/api
 
 ```apacheconf
 <VirtualHost *:80>
-  ServerName gpl2026.com
-  ServerAlias www.gpl2026.com
+  ServerName gpl2026.es
+  ServerAlias www.gpl2026.es
 
   DocumentRoot /var/www/html/isaure/sites_mariage/gpl2026/dist
   <Directory /var/www/html/isaure/sites_mariage/gpl2026/dist>
@@ -263,5 +299,6 @@ npm --prefix backend run seed:couple
 ### Déployer les règles Firestore
 
 ```bash
+npm install -D firebase-tools
 firebase deploy --only firestore:rules
 ```

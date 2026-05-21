@@ -49,7 +49,7 @@ export const weddingConfig = {
     dateDisplayShort: "27 ⸱ 09 ⸱ 2026",
 
     perLocale: {
-      en: {
+      ca: {
         invitationDateTime: "dissabte 27 de setembre del 2026 a les 18.45h",
         scheduleDay: "Dissabte 27 de setembre",
         ceremonyTime: "18h45",
@@ -75,10 +75,10 @@ export const weddingConfig = {
   },
 
   rsvp: {
-    deadlineDate: "2026-08-20",
+    deadlineDate: "2026-08-03",
     perLocale: {
-      en: { deadline: "20 d'agost del 2026" },
-      es: { deadline: "20 de agosto de 2026" },
+      ca: { deadline: "3 d'agost del 2026" },
+      es: { deadline: "3 de agosto de 2026" },
     },
   },
 
@@ -86,7 +86,7 @@ export const weddingConfig = {
     busOriginName: "Residencia las Hermanitas",
     busToVenueName: "Casa Pilatos",
     perLocale: {
-      en: {
+      ca: {
         busToCeremonyTime: "11:30 AM",
         busReturnTime: "2 AM",
       },
@@ -112,10 +112,10 @@ export const weddingConfig = {
   },
 
   i18n: {
-    defaultLang: "en",
+    defaultLang: "ca",
     languages: {
-      en: {
-        code: "en",
+      ca: {
+        code: "ca",
         shortLabel: "CAT",
       },
       es: {

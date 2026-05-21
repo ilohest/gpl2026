@@ -1,11 +1,8 @@
 <template>
   <component :is="tag">
-    <template
-      v-for="(token, index) in tokens"
-      :key="`${token.type}-${index}`"
-    >
+    <template v-for="(token, index) in tokens" :key="`${token.type}-${index}`">
       <br v-if="token.type === 'br'" />
-      <strong v-else-if="token.type === 'strong'">{{ token.text }}</strong>
+      <span v-else-if="token.type === 'strong'">{{ token.text }}</span>
       <template v-else>{{ token.text }}</template>
     </template>
   </component>

@@ -1034,10 +1034,14 @@ export const api = {
   ): Promise<RpcSendCustomEmailResponse> {
     const jsonPayload = payload as RpcSendCustomEmailInput;
     return rpcJson<RpcSendCustomEmailResponse>(async (forceRefresh) =>
-      rpcSendCustomEmail.$post(
-        { json: jsonPayload },
-        { headers: await bearerHeaders(forceRefresh) },
-      ),
+      fetch("/api/send-custom-email", {
+        method: "POST",
+        headers: {
+          ...(await bearerHeaders(forceRefresh)),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonPayload),
+      }),
     );
   },
 

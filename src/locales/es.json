@@ -29,7 +29,7 @@
     "excitement": "¡Estamos muy contentos de compartir este día con vosotros!"
   },
   "invitation": {
-    "intro": "Estimados compañeros, <br>os esperamos, con mucha ilusión, <br>el <strong>{invitationDateTime}</strong>, <br>para la celebración del gran PL, que tendrá lugar en",
+    "intro": "Estimados compañeros, <br>os esperamos, con mucha ilusión, <br>el <strong>{invitationDateTime}</strong>, <br>para la celebración del gran PL, que tendrá lugar en <strong>{ceremonyVenue}</strong>",
     "location": "Restaurante Les Terrasses de Sant Romà,",
     "activities": "donde reuniremos nuestros corazones.",
     "cant-miss": ""
@@ -43,8 +43,28 @@
     "title-mobile": "Confirmad <br>vuestra asistencia",
     "celebration": "",
     "instructions": "Hacednos saber si podréis asistir a través del formulario de confirmación. <br>Decidnos si venís acompañados.<br><br>Por favor, confirmad vuestra asistencia antes del",
-    "deadline": "20 de agosto de 2026.",
+    "deadline": "3 de agosto de 2026.",
     "button": "Confirmar asistencia"
+  },
+  "home_invite": {
+    "intro_line_1": "Estimados compañeros, os esperamos, con mucha",
+    "intro_line_2": "ilusión para celebrar la gran PL",
+    "date_label": "el sábado 27 de agosto de 2026",
+    "date_day": "el sábado",
+    "date_month": "27 de agosto",
+    "date_year": "de 2026",
+    "time": "a las 18h45",
+    "restaurant": "en el restaurante Les Terrasses de Sant Romà",
+    "address_title": "DIRECCIÓN",
+    "participation_title": "PARTICIPACIÓN",
+    "participation_line_1": "Se cobrará el mismo día antes de comenzar la reunión plenaria.",
+    "participation_line_2": "Os agradeceremos que lleguéis con tiempo suficiente y que llevéis el dinero justo",
+    "participation_line_3": "correspondiente (ni Visa, ni cheques bancarios), para facilitar el pago a la",
+    "participation_line_4": "dirección del restaurante.",
+    "confirmation_title": "CONFIRMACIÓN",
+    "confirmation_line": "Por favor, confirmad vuestra asistencia antes del",
+    "closing_line_1": "Esperamos veros y celebrar",
+    "closing_line_2": "con vosotros!"
   },
   "waves": {
     "text": "Dios, que es la perfección de la ciencia y del amor, solo ofrece y acepta la ciencia y el amor perfectos. El tesoro sepultado en la tierra. El gran concentrado del Universo.",
@@ -121,7 +141,7 @@
     "title": "Confirmad vuestra asistencia",
     "excitement": "¡Nos encantaría veros!",
     "instructions": "Por favor, confirmad vuestra asistencia antes del",
-    "deadline": "20 de agosto de 2026.",
+    "deadline": "3 de agosto de 2026.",
     "diet": {
       "vegetarian": "Vegetariana",
       "vegan": "Vegana",
@@ -146,7 +166,7 @@
       "guest_n": "Invitado",
       "is_child": "Es un niño/a",
       "transport": "¿Vas a necesitar el transporte en autobús*?",
-      "wedding_parts": "¿A qué partes de la evento asistirás*?",
+      "wedding_parts": "¿A qué partes del evento asistirás*?",
       "wedding_part_mass": "Misa",
       "wedding_part_cocktail_reception": "Cóctel / recepción",
       "wedding_part_dinner": "Cena",
@@ -174,6 +194,13 @@
       "success_title": "Vuestra respuesta ha sido enviada",
       "error_title": "Error al enviar",
       "error_detail": "Hubo un problema al enviar vuestra confirmación. Por favor, intentadlo de nuevo."
+    },
+    "recaptcha": {
+      "prefix": "Este sitio está protegido por reCAPTCHA y se aplican la",
+      "privacy": "Política de privacidad",
+      "middle": "y los",
+      "terms": "Términos del servicio",
+      "suffix": "de Google."
     },
     "submit_ok": "¡Gracias! Hemos recibido vuestra respuesta."
   },
@@ -386,7 +413,7 @@
     },
     "bento": {
       "rsvp_title": "Respuestas de los invitados",
-      "rsvp_subtitle": "Gestión de las respuestas de los invitados y de las restricciones alimentarias, organización la playlist de la evento",
+      "rsvp_subtitle": "Gestión de las respuestas de los invitados y de las restricciones alimentarias, organización de la playlist del evento",
       "rsvp_plusones": "Acompañantes",
       "rsvp_transport": "Transporte",
       "rsvp_last": "Última respuesta",
@@ -434,7 +461,7 @@
     },
     "planner": {
       "title": "Planificador IA",
-      "helper": "Describe las tareas que quieres organizar antes de la evento. El planificador genera una lista clara y las coloca en el calendario.",
+      "helper": "Describe las tareas que quieres organizar antes del evento. El planificador genera una lista clara y las coloca en el calendario.",
       "input_label": "¿Qué hay que planificar?",
       "placeholder": "Ejemplo 1: el próximo lunes al mediodía, degustación con el catering. Urgente. Preguntar por opciones sin gluten.\nEjemplo 2: prueba de vestido de novia en 2 semanas, martes a las 16:00. No olvidar llevar tacones. Enviar un mensaje a Margo mañana para invitarla a venir conmigo.",
       "generate": "Generar tarea",
@@ -489,7 +516,7 @@
       "message": "Mensaje",
       "attending": "Asistirá",
       "transport": "Transporte",
-      "wedding_event_parts": "Partes de la evento",
+      "wedding_event_parts": "Partes del evento",
       "restrictions": "Restricciones",
       "songs": "Canciones",
       "comments": "Comentarios",
@@ -849,13 +876,13 @@
       "net_hint": "Gasto - regalos"
     },
     "agenda": {
-      "title": "Agenda de la evento",
-      "pdf_button": "PDF agenda de la evento",
+      "title": "Agenda del evento",
+      "pdf_button": "PDF agenda del evento",
       "view_list": "Lista",
       "view_timeline": "Cronología",
       "add": "Añadir",
       "templates_btn": "Plantillas",
-      "helper_body": "Aquí construyes el horario de la evento: hora, duración, título, lugar, participantes, responsables, música y notas.",
+      "helper_body": "Aquí construyes el horario del evento: hora, duración, título, lugar, participantes, responsables, música y notas.",
       "helper_views": "Puedes cambiar entre vista en forma de lista y vista  cronológica. Los filtros dependen de la vista.",
       "helper_types_tags": "Tipos e intervenientes: puedes seleccionar existentes o crear nuevas etiquetas escribiendo y pulsando Enter. Se podrán reutilizar.",
       "helper_reorder": "En la vista Lista, puedes reordenar los elementos.",
@@ -1050,13 +1077,13 @@
         }
       },
       "print": {
-        "dialog_title": "PDF del agenda de la evento",
+        "dialog_title": "PDF de la agenda del evento",
         "download_full": "Descargar agenda completo",
         "by_vendor": "Por interviniente",
         "tag_placeholder": "DJ, catering, etc.",
         "download_for_vendor": "Descargar agenda para un interviniente",
-        "header_full": "Agenda de la evento",
-        "header_tag": "Agenda de la evento — {tag}",
+        "header_full": "Agenda del evento",
+        "header_tag": "Agenda del evento — {tag}",
         "cols": {
           "time": "Hora",
           "duration": "Duración",
@@ -1386,8 +1413,8 @@
           "alt": "Captura del panel de presupuesto"
         },
         "agenda": {
-          "title": "Agenda de la evento",
-          "text": "Organiza el día de la evento paso a paso, define horarios, asigna responsables y visualiza todo el planning de un vistazo.",
+          "title": "Agenda del evento",
+          "text": "Organiza el día del evento paso a paso, define horarios, asigna responsables y visualiza todo el planning de un vistazo.",
           "alt": "Captura del panel de la agenda"
         }
       }

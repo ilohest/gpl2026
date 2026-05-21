@@ -353,7 +353,7 @@ useRevealOnScroll({
     ":scope > header, :scope > main > *:not(.home-alt__countdown-banner)",
 });
 
-const currentLocale = computed(() => (lang.value === "en" ? "en" : "es"));
+const currentLocale = computed(() => (lang.value === "ca" ? "ca" : "es"));
 const eventLocale = computed(
   () => weddingConfig.event.perLocale[currentLocale.value],
 );
@@ -397,19 +397,19 @@ const timelineItems = computed(() => [
   },
   {
     key: "cocktail",
-    label: currentLocale.value === "en" ? "Cocktail" : "Cóctel",
+    label: currentLocale.value === "ca" ? "Cocktail" : "Cóctel",
     time: "19:00h",
     image: "/assets/images/coctel.png",
   },
   {
     key: "dinner",
-    label: currentLocale.value === "en" ? "Dinner" : "Cena",
+    label: currentLocale.value === "ca" ? "Sopar" : "Cena",
     time: "20:00h",
     image: "/assets/images/cena.png",
   },
   {
     key: "party",
-    label: currentLocale.value === "en" ? "Party" : "Fiesta",
+    label: currentLocale.value === "ca" ? "Festa" : "Fiesta",
     time: "23:00h",
     image: "/assets/images/fiesta.png",
   },

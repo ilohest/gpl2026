@@ -767,7 +767,7 @@ const { brideFirstName, groomFirstName, initials } = weddingConfig.couple;
 const { dateDisplayShort } = weddingConfig.event;
 const { mapUrl: celebrationMapUrl } = weddingConfig.celebration;
 
-let rawSiteUrl = process.env.SITE_URL || "https://www.gpl2026.com";
+let rawSiteUrl = process.env.SITE_URL || "https://www.gpl2026.es";
 if (!/^https?:\/\//i.test(rawSiteUrl)) rawSiteUrl = "https://" + rawSiteUrl;
 const SITE_URL = rawSiteUrl;
 

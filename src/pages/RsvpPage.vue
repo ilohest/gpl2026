@@ -1,25 +1,17 @@
 <!-- src/pages/RsvpPage.vue -->
 <template>
   <main>
-    <section ref="pageRef" class="flex flex-col gap-8">
-      <h2>{{ t("rsvp.title") }}</h2>
+    <section ref="pageRef" class="rsvp-page flex flex-col gap-8">
+      <header class="rsvp-page__intro">
+        <h1 class="rsvp-page__title">{{ t("rsvp.title") }}</h1>
+        <p class="rsvp-page__excitement">{{ t("rsvp.excitement") }}</p>
+        <div class="rsvp-page__deadline">
+          <p>{{ t("rsvp.instructions") }}</p>
+          <p>{{ t("rsvp.deadline") }}</p>
+        </div>
+      </header>
 
       <div class="flex flex-col gap-8">
-        <p class="text-secondary-text font-semibold">
-          {{ t("rsvp.excitement") }}
-        </p>
-
-        <div>
-          <p>{{ t("rsvp.instructions") }}</p>
-          <p class="font-semibold">{{ t("rsvp.deadline") }}</p>
-        </div>
-
-        <img
-          src="/assets/images/img9.png"
-          alt="Corazon"
-          class="img9-1 pulse mx-auto my-4"
-        />
-
         <!-- Form -->
         <form
           v-if="!done"
@@ -201,22 +193,6 @@
                   />
                 </div>
 
-                <label
-                  :for="'comp-isChild-' + comp.id"
-                  class="inline-flex items-center gap-3 text-sm"
-                >
-                  <Checkbox
-                    :id="'comp-isChild-' + comp.id"
-                    v-model="comp.isChild"
-                    binary
-                    class="rsvp-child-checkbox"
-                    :disabled="isNotAttending"
-                  />
-                  <span class="rsvp-child-label">{{
-                    t("rsvp.form.is_child")
-                  }}</span>
-                </label>
-
                 <!-- Régime invité (multi-sélection standardisée) -->
                 <Fieldset
                   :legend="t('rsvp.form.diet')"
@@ -272,6 +248,25 @@
               color: 'white',
             }"
           />
+          <p class="rsvp-recaptcha-notice">
+            {{ t("rsvp.recaptcha.prefix") }}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ t("rsvp.recaptcha.privacy") }}
+            </a>
+            {{ t("rsvp.recaptcha.middle") }}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ t("rsvp.recaptcha.terms") }}
+            </a>
+            {{ t("rsvp.recaptcha.suffix") }}
+          </p>
         </form>
 
         <ProgressSpinner
@@ -302,7 +297,7 @@
         </p>
       </div>
 
-      <div class="drinks-container m-0 lg:mx-auto lg:mt-0">
+      <div class="drinks-container mx-auto lg:mt-0">
         <img src="/assets/images/img6-1.png" alt="Preboda" class="img6-1" />
         <img src="/assets/images/img6-2.png" alt="Preboda" class="img6-2" />
       </div>
@@ -319,7 +314,6 @@ import ProgressSpinner from "primevue/progressspinner";
 import { useToast } from "primevue/usetoast";
 import Button from "primevue/button";
 import Textarea from "primevue/textarea";
-import Checkbox from "primevue/checkbox";
 import SafeRichText from "@/components/utils/SafeRichText.vue";
 
 import {
@@ -331,7 +325,9 @@ import { useLang } from "@/composables/useLang";
 import { useRevealOnScroll } from "@/composables/useRevealOnScroll";
 import weddingConfig from "../../shared/weddingConfig.ts";
 
-const RECAPTCHA_SITE_KEY = "6LeM_IoqAAAAAH2E3-dwmGvXxRZ7UPn0RmUjjESQ";
+const RECAPTCHA_SITE_KEY =
+  import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
+  "6LdNOfMqAAAAAHMScG5Y9xU9_QM-t1UZs0rlNMeZ";
 let recaptchaScriptEl = null;
 
 function loadRecaptchaScript() {
@@ -442,7 +438,6 @@ function addCompanion() {
         : String(Date.now()) + "-" + String(Math.random()),
     firstName: "",
     lastName: "",
-    isChild: false,
     dietCodes: [],
     dietOtherText: "",
   });
@@ -468,8 +463,7 @@ async function onSubmit(e) {
     if (!window.grecaptcha?.execute) throw new Error("RECAPTCHA_NOT_LOADED");
     await new Promise((resolve) => window.grecaptcha.ready(resolve));
 
-    const siteKey = "6LeM_IoqAAAAAH2E3-dwmGvXxRZ7UPn0RmUjjESQ";
-    const recaptchaToken = await window.grecaptcha.execute(siteKey, {
+    const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
       action: "submit",
     });
     if (!recaptchaToken) throw new Error("RECAPTCHA_TOKEN_MISSING");
@@ -534,7 +528,7 @@ async function onSubmit(e) {
 
         isPrimary: false,
         isCouple: false,
-        isChild: !!c.isChild,
+        isChild: false,
       });
     });
 
@@ -601,6 +595,66 @@ async function onSubmit(e) {
   background: transparent;
 }
 
+.rsvp-page {
+  max-width: min(100%, 980px);
+  margin: 0 auto;
+  padding-top: clamp(72px, 10vw, 112px);
+}
+
+.rsvp-page__intro {
+  max-width: 980px;
+  margin: 0 auto clamp(12px, 2vw, 24px);
+  text-align: center;
+}
+
+.rsvp-page__title {
+  margin: 0 auto;
+  color: #151817;
+  font-family: "PPPangaia", "Antic Didone", serif;
+  font-size: clamp(1.65rem, 3.1vw, 2rem);
+  font-weight: 200;
+  line-height: 0.95;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.rsvp-page__excitement {
+  margin-top: clamp(34px, 4.5vw, 54px);
+  color: #26302f;
+  font-family: "PPPlayground", "MsClaudy", cursive;
+  font-size: clamp(1.55rem, 2.7vw, 2rem);
+  font-weight: 300;
+  line-height: 0.9;
+}
+
+.rsvp-page__deadline {
+  margin-top: clamp(38px, 5vw, 62px);
+  color: #1f2524;
+  font-family: "PPPangaia", "Antic Didone", serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.15;
+}
+
+.rsvp-page__deadline p {
+  margin: 0;
+}
+
+.rsvp-recaptcha-notice {
+  max-width: 34rem;
+  margin: 0.25rem auto 0;
+  color: #5f6665;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.rsvp-recaptcha-notice a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 :deep(.p-fieldset),
 :deep(.p-fieldset .p-fieldset-content),
 :deep(.p-selectbutton),
@@ -654,12 +708,43 @@ async function onSubmit(e) {
   }
 }
 
-:deep(.rsvp-child-checkbox.p-checkbox-checked .p-checkbox-box) {
-  background: var(--accent-color) !important;
-  border-color: var(--accent-color) !important;
-}
+@media (max-width: 520px) {
+  .rsvp-page {
+    gap: 1.6rem;
+    padding-top: 84px;
+  }
 
-.rsvp-child-label {
-  margin-left: 0.45rem;
+  .rsvp-page__title {
+    font-size: clamp(1.55rem, 6.4vw, 1.95rem);
+    line-height: 0.98;
+  }
+
+  .rsvp-page__excitement {
+    margin-top: 18px;
+    font-size: clamp(1.42rem, 7vw, 1.95rem);
+    line-height: 0.95;
+  }
+
+  .rsvp-page__deadline {
+    margin-top: 20px;
+    font-size: clamp(1rem, 4.2vw, 1.18rem);
+    max-width: 100%;
+  }
+
+  .rsvp-page .drinks-container {
+    width: min(320px, 100%);
+    height: 224px;
+    margin: 0 auto !important;
+    scale: 1;
+    transform-origin: top center;
+  }
+
+  .rsvp-page .img6-1 {
+    left: 47%;
+  }
+
+  .rsvp-page .img6-2 {
+    left: 22%;
+  }
 }
 </style>

@@ -10,7 +10,9 @@ import type { ServiceAccount } from "firebase-admin";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
+const runtimeNodeEnv = process.env.NODE_ENV;
+dotenv.config({ path: path.resolve(__dirname, "..", ".env"), override: true });
+if (runtimeNodeEnv) process.env.NODE_ENV = runtimeNodeEnv;
 
 const serviceAccountPath = path.resolve(__dirname, "..", "firebase-adminsdk.json");
 

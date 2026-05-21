@@ -1,5 +1,5 @@
 // backend/scripts/createSuperadmin.ts
-import { admin, firestore } from "../lib/firebase.js";
+import { admin, ensureFirebaseAdminInitialized, firestore } from "../lib/firebase.js";
 
 const email = (process.argv[2] || "").trim().toLowerCase();
 const password = process.argv[3] || ""; // optionnel
@@ -12,12 +12,21 @@ if (!email) {
 }
 
 async function main() {
+  ensureFirebaseAdminInitialized();
+
   let user: import("firebase-admin/auth").UserRecord;
 
   // 1) Get or create Auth user
   try {
     user = await admin.auth().getUserByEmail(email);
     console.log("Auth user exists:", { uid: user.uid, email });
+    if (password) {
+      user = await admin.auth().updateUser(user.uid, {
+        password,
+        emailVerified: true,
+      });
+      console.log("Auth user password updated:", { uid: user.uid, email });
+    }
   } catch (e: unknown) {
     const code = (e as { code?: string })?.code;
     if (code !== "auth/user-not-found") throw e;
@@ -41,11 +50,14 @@ async function main() {
   await admin.auth().setCustomUserClaims(user.uid, {
     superadmin: true,
     admin: true,
+    permissions: ["superadmin:all"],
+    claimsVersion: Date.now(),
   });
   console.log("Custom claims set:", {
     uid: user.uid,
     superadmin: true,
     admin: true,
+    permissions: ["superadmin:all"],
   });
 
   // 3) Write Firestore user doc

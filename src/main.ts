@@ -39,9 +39,11 @@ app.use(pinia);
 
 const initialLang = (() => {
   try {
-    return localStorage.getItem("lang") || "en";
+    const stored = String(localStorage.getItem("lang") || "").trim().toLowerCase();
+    if (stored === "en" || stored === "cat") return "ca";
+    return stored || "ca";
   } catch {
-    return "en";
+    return "ca";
   }
 })();
 

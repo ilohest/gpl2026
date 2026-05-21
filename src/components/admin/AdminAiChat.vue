@@ -211,7 +211,7 @@ function isTransportQuestion(input) {
 }
 
 function buildRsvpFilterCta(userMessage, answerText) {
-  const locale = String(lang?.value || "en").toLowerCase();
+  const locale = String(lang?.value || "ca").toLowerCase();
   const text = normalizeText(userMessage);
   const labelFor = (kind) => {
     if (locale.startsWith("es")) {
@@ -506,7 +506,7 @@ async function sendMessage(text) {
       message: msg,
       history,
       scope: scopeKey.value,
-      locale: String(lang?.value || "en"),
+      locale: String(lang?.value || "ca"),
     });
 
     const cta = buildRsvpFilterCta(msg, res?.answer || "");

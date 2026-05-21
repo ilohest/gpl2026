@@ -242,7 +242,7 @@ function safeSiteUrlFromEnv(): string {
 }
 
 function buildCustomInner(contentHtml: string): string {
-  const { brideFirstName, groomFirstName, initials } = weddingConfig.couple;
+  const { initials } = weddingConfig.couple;
 
   const SITE_URL = safeSiteUrlFromEnv();
   const WEBSITE_PASSWORD_HINT = String(
@@ -266,16 +266,7 @@ ${
     : ""
 }
 ${WEBSITE_PASSWORD_HINT ? `<p>🔐 ${WEBSITE_PASSWORD_HINT}</p>` : ""}
-<p>💌 ${brideFirstName} & ${groomFirstName}</p>
-
-${
-  SITE_URL
-    ? `<p style="text-align:center;margin:24px 0 0 0;">
-         <img src="${SITE_URL}/assets/images/img2-1.png" alt="${initials}"
-              style="width:40%;max-width:530px;min-width:280px;border:none;" />
-       </p>`
-    : ""
-}
+<p>${initials}</p>
 `;
 }
 

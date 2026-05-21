@@ -12,6 +12,7 @@ type GuestAttending = boolean | null;
 interface GuestDirectoryOptions {
   scope?: GuestDirectoryScope;
   fields?: GuestDirectoryField[];
+  includeEmails?: boolean;
 }
 
 interface GuestDirectoryItemBase {
@@ -91,6 +92,7 @@ function sortByName(a: GuestDirectoryItemBase, b: GuestDirectoryItemBase): numbe
 export async function listGuestDirectory({
   scope = "ALL",
   fields = [],
+  includeEmails = false,
 }: GuestDirectoryOptions = {}): Promise<GuestDirectoryItem[]> {
   const S = String(scope || "ALL")
     .trim()
@@ -155,8 +157,9 @@ export async function listGuestDirectory({
 
     // Only expose emails when explicitly requested.
     // This keeps least-privilege defaults for modules that only need names/attendance/diet.
-    const email = S === "WITH_EMAIL" ? safeEmail(d.email) : "";
-    if (S === "WITH_EMAIL" && !email) return;
+    const shouldIncludeEmail = includeEmails || S === "WITH_EMAIL";
+    const email = shouldIncludeEmail ? safeEmail(d.email) : "";
+    if (shouldIncludeEmail && !email) return;
 
     const base: GuestDirectoryItem = {
       guestId,
@@ -255,7 +258,7 @@ export async function resolveRecipients({
   // ONLY_ATTENDING / ALL_RESPONDED
   // --------------------
   const scope = m === "ONLY_ATTENDING" ? "ONLY_ATTENDING" : "RESPONDED";
-  const dir = await listGuestDirectory({ scope });
+  const dir = await listGuestDirectory({ scope, includeEmails: true });
 
   const seen = new Set<string>();
   const out: ResolvedRecipient[] = [];

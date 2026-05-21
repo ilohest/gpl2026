@@ -70,10 +70,6 @@ export function buildRsvpConfirmationEmail({
 
   const mapHref = safeMapUrl ? escapeAttr(safeMapUrl) : "";
   const siteHref = safeSiteUrl ? escapeAttr(safeSiteUrl) : "";
-  const imgSrc = safeSiteUrl
-    ? escapeAttr(`${safeSiteUrl.replace(/\/+$/, "")}/assets/images/img2-1.png`)
-    : "";
-
   const nameEs = safeName || "invitado/a";
   const nameEn = safeName || "guest";
   const who = isEn ? nameEn : nameEs;
@@ -96,16 +92,7 @@ export function buildRsvpConfirmationEmail({
                 : "our website"
             } – 🔐 ${safePwd}.
           </p>
-          <p>💌 ${safeInitials}</p>
-          ${
-            imgSrc
-              ? `<p style="text-align:center;">
-                  <img src="${imgSrc}"
-                       alt="${safeInitials}"
-                       style="width:40%;max-width:530px;min-width:280px;border:none;" />
-                </p>`
-              : ""
-          }
+          <p>${safeInitials}</p>
         `
       : `
           <p>🌸 Hola ${who},</p>
@@ -123,16 +110,7 @@ export function buildRsvpConfirmationEmail({
                 : "nuestra web"
             } – 🔐 ${safePwd}.
           </p>
-          <p>💌 ${safeInitials}</p>
-          ${
-            imgSrc
-              ? `<p style="text-align:center;">
-                  <img src="${imgSrc}"
-                       alt="${safeInitials}"
-                       style="width:40%;max-width:530px;min-width:280px;border:none;" />
-                </p>`
-              : ""
-          }
+          <p>${safeInitials}</p>
         `
     : isEn
       ? `
@@ -146,16 +124,7 @@ export function buildRsvpConfirmationEmail({
                 : "our website"
             } – 🔐 ${safePwd}.
           </p>
-          <p>💌 ${safeInitials}</p>
-          ${
-            imgSrc
-              ? `<p style="text-align:center;">
-                  <img src="${imgSrc}"
-                       alt="${safeInitials}"
-                       style="width:40%;max-width:530px;min-width:280px;border:none;" />
-                </p>`
-              : ""
-          }
+          <p>${safeInitials}</p>
         `
       : `
           <p>🌸 Hola ${who},</p>
@@ -168,16 +137,7 @@ export function buildRsvpConfirmationEmail({
                 : "nuestra web"
             } – 🔐 ${safePwd}.
           </p>
-          <p>💌 ${safeInitials}</p>
-          ${
-            imgSrc
-              ? `<p style="text-align:center;">
-                  <img src="${imgSrc}"
-                       alt="${safeInitials}"
-                       style="width:40%;max-width:530px;min-width:280px;border:none;" />
-                </p>`
-              : ""
-          }
+          <p>${safeInitials}</p>
         `;
 
   const subjectName = safeSubjectPart(guestFirstName, isEn ? "guest" : "invitado/a");

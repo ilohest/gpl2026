@@ -10,10 +10,10 @@ Usage:
   ./scripts/deploy-vps.sh [options]
 
 Options:
-  --host <ip|hostname>            VPS host (required unless VPS_HOST set)
+  --host <ip|hostname>            VPS host (default: 82.112.255.95 or VPS_HOST)
   --user <user>                   VPS user (default: root or VPS_USER)
-  --app-dir <path>                Remote app directory (required unless APP_DIR set)
-  --domain <domain>               Domain for smoke tests (optional unless --smoke)
+  --app-dir <path>                Remote app directory (default: /var/www/html/isaure/sites_mariage/gpl2026 or APP_DIR)
+  --domain <domain>               Domain for smoke tests (default: gpl2026.es or DOMAIN)
 
   --backend-env <path>            Local backend env file (default: backend/.env or BACKEND_ENV_PATH)
   --front-env <path>              Local front env file (default: .env or FRONT_ENV_PATH) (optional)
@@ -48,10 +48,10 @@ die() {
   exit 1
 }
 
-VPS_HOST="${VPS_HOST:-}"
+VPS_HOST="${VPS_HOST:-82.112.255.95}"
 VPS_USER="${VPS_USER:-root}"
-APP_DIR="${APP_DIR:-}"
-DOMAIN="${DOMAIN:-}"
+APP_DIR="${APP_DIR:-/var/www/html/isaure/sites_mariage/gpl2026}"
+DOMAIN="${DOMAIN:-gpl2026.es}"
 
 BACKEND_ENV_PATH="${BACKEND_ENV_PATH:-backend/.env}"
 FRONT_ENV_PATH="${FRONT_ENV_PATH:-.env}"

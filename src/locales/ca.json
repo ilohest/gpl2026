@@ -1,24 +1,24 @@
 {
   "pagetitle": {
-    "404": "Page not found",
+    "404": "Pàgina no trobada",
     "home": "Invitació GPL 2026",
     "login": "Iniciar sessió - Gran PL 2026",
     "rsvp": "Confirmar assistència",
-    "accommodation": "Accommodation",
+    "accommodation": "Allotjament",
     "blog": "GPL 2026's blog",
-    "admin": "Admin panel",
-    "superadmin": "Super-admin panel",
-    "access": "Login",
-    "profile": "Profile",
-    "reset": "Reset password",
-    "legal": "Legal notice",
-    "privacy": "Privacy policy",
-    "credits": "Credits"
+    "admin": "Panell d'administració",
+    "superadmin": "Panell de superadministració",
+    "access": "Accés",
+    "profile": "Perfil",
+    "reset": "Restablir la contrasenya",
+    "legal": "Avís legal",
+    "privacy": "Política de privacitat",
+    "credits": "Crèdits"
   },
   "header": {
     "home": "Inici",
     "rsvp": "Confirmar assistència",
-    "accommodation": "Accommodation",
+    "accommodation": "Allotjament",
     "blog": "Blog",
     "superadmin": "Superadmin",
     "admin": "Admin"
@@ -29,22 +29,42 @@
     "excitement": "Estem molt contents de compartir aquest dia amb vosaltres!"
   },
   "invitation": {
-    "intro": "Estimats companys, <br>us esperem, amb molta il.lusió, <br>el <strong>{invitationDateTime}</strong>, <br> per la celebració de la gran PL, que tindrà lloc al",
+    "intro": "Estimats companys, <br>us esperem, amb molta il.lusió, <br>el <strong>{invitationDateTime}</strong>, <br> per la celebració de la gran PL, que tindrà lloc al <strong>{ceremonyVenue}</strong>",
     "location": "Restaurant Les Terrasses de Sant Romà,",
     "activities": "on reunirem els nostres cors.",
     "cant-miss": ""
   },
   "countdown": {
     "event_day": "Ha arribat el gran dia!",
-    "remaining_time": "Queden <br> <strong>{days} dies, {hours} hores, and {minutes} minuts</strong><br> per celebrar la reunió plenària."
+    "remaining_time": "Queden <br> <strong>{days} dies, {hours} hores, i {minutes} minuts</strong><br> per celebrar la reunió plenària."
   },
   "homepagersvp": {
     "title": "Confirmeu la vostra assistència",
     "title-mobile": "Confirmeu <br>la vostra assistència",
     "celebration": "",
     "instructions": "Feu-nos saber si podreu assistir a través del formulari de confirmació. <br>Digueu-nos si veniu acompanyats.<br><br>Si us plau, confirmeu la vostra assistència abans del",
-    "deadline": "20 d'agost del 2026.",
+    "deadline": "3 d'agost del 2026.",
     "button": "Confirmar assistència"
+  },
+  "home_invite": {
+    "intro_line_1": "Estimats companys, us esperem, amb molta",
+    "intro_line_2": "il.lusió per celebrar la gran PL",
+    "date_label": "el dissabte 27 d'agost del 2026",
+    "date_day": "el dissabte",
+    "date_month": "27 d'agost",
+    "date_year": "del 2026",
+    "time": "a les 18h45",
+    "restaurant": "al restaurant Les Terrasses de Sant Romà",
+    "address_title": "ADREÇA",
+    "participation_title": "PARTICIPACIÓ",
+    "participation_line_1": "Es cobrarà el mateix dia abans de començar la reunió plenària.",
+    "participation_line_2": "Us agrairem que arribeu amb temps suficient i que porteu els diners justos",
+    "participation_line_3": "corresponents (ni Visa, ni talons bancaris), per tal de facilitar el pagament a la",
+    "participation_line_4": "direcció del restaurant.",
+    "confirmation_title": "CONFIRMACIÓ",
+    "confirmation_line": "Si us plau, confirmeu la vostra assistència abans del",
+    "closing_line_1": "Esperem veure-us i celebrar",
+    "closing_line_2": "amb vosaltres!"
   },
   "waves": {
     "text": "Déu, que és la perfecció de la ciència i de l'amor, només ofereix i accepta la ciència i l'amor perfectes. El tresor sepultat dins la terra. El gran concentrat de l'Univers.",
@@ -121,7 +141,7 @@
     "title": "Confirmeu la vostra assistència",
     "excitement": "Ens encantaria veure-us!",
     "instructions": "Si us plau, confirmeu la vostra assistència abans del",
-    "deadline": "20 d'agost del 2026.",
+    "deadline": "3 d'agost del 2026.",
     "diet": {
       "vegetarian": "Vegetariana",
       "vegan": "Vegana",
@@ -174,6 +194,13 @@
       "success_title": "La vostra resposta s'ha enviat",
       "error_title": "Error en enviar",
       "error_detail": "Hi ha hagut un problema en enviar la confirmació. Si us plau, torneu-ho a intentar."
+    },
+    "recaptcha": {
+      "prefix": "Aquest lloc està protegit per reCAPTCHA i s'apliquen la",
+      "privacy": "Política de privacitat",
+      "middle": "i les",
+      "terms": "Condicions del servei",
+      "suffix": "de Google."
     },
     "submit_ok": "Gràcies! Hem rebut la vostra resposta."
   },
@@ -1225,62 +1252,62 @@
     "toast_reset_fail": "Unable to send email"
   },
   "footer": {
-    "copyright": "© 2026 All rights reserved.",
-    "admin": "Admin panel",
-    "product": "Product",
-    "legal": "Legal notice",
-    "privacy": "Privacy",
-    "credits": "Credits"
+    "copyright": "© 2026 Tots els drets reservats.",
+    "admin": "Panell d'administració",
+    "product": "Producte",
+    "legal": "Avís legal",
+    "privacy": "Privacitat",
+    "credits": "Crèdits"
   },
   "legal": {
-    "title": "Legal notice",
-    "updated": "Last updated: February 11, 2026",
+    "title": "Avís legal",
+    "updated": "Última actualització: 11 de febrer de 2026",
     "editor": {
-      "title": "Publisher",
-      "body": "This website is operated by Isaure Lohest. Full legal identification details (company name, address, VAT/company number) can be provided on request and will be added here before commercial launch."
+      "title": "Editora",
+      "body": "Aquest lloc web està operat per Isaure Lohest. Les dades legals completes (nom de l'empresa, adreça, IVA/número d'empresa) es poden facilitar a petició i s'afegiran aquí abans del llançament comercial."
     },
     "hosting": {
-      "title": "Hosting",
-      "body": "This platform is hosted on a Hostinger VPS."
+      "title": "Allotjament",
+      "body": "Aquesta plataforma està allotjada en un VPS de Hostinger."
     },
     "ip": {
-      "title": "Intellectual property",
-      "body": "Unless stated otherwise, source code, text, and visual assets on this website are protected by copyright and may not be reused without prior written authorization."
+      "title": "Propietat intel·lectual",
+      "body": "Llevat que s'indiqui el contrari, el codi font, els textos i els elements visuals d'aquest lloc web estan protegits per drets d'autor i no es poden reutilitzar sense autorització prèvia per escrit."
     },
     "liability": {
-      "title": "Liability",
-      "body": "The publisher makes reasonable efforts to keep this website accurate and available, but cannot guarantee uninterrupted service or the absence of errors."
+      "title": "Responsabilitat",
+      "body": "L'editora fa esforços raonables per mantenir aquest lloc web precís i disponible, però no pot garantir un servei ininterromput ni l'absència d'errors."
     },
     "contact": {
-      "title": "Contact",
-      "body": "Professional contact details are available on:"
+      "title": "Contacte",
+      "body": "Les dades de contacte professional estan disponibles a:"
     }
   },
   "privacy": {
-    "title": "Privacy policy (GDPR)",
-    "updated": "Last updated: February 11, 2026",
+    "title": "Política de privacitat (RGPD)",
+    "updated": "Última actualització: 11 de febrer de 2026",
     "controller": {
-      "title": "Data controller",
-      "body": "The data controller is Isaure Lohest (contact below)."
+      "title": "Responsable del tractament",
+      "body": "La responsable del tractament és Isaure Lohest (contacte a continuació)."
     },
     "data": {
-      "title": "Data collected",
-      "body": "Depending on usage, this platform may process identity/contact information, RSVP and guest-management details, and technical logs required for security and operation."
+      "title": "Dades recollides",
+      "body": "Segons l'ús, aquesta plataforma pot tractar dades d'identitat/contacte, informació de RSVP i gestió de convidats, i registres tècnics necessaris per a la seguretat i el funcionament."
     },
     "purpose": {
-      "title": "Purpose and legal basis",
-      "body": "Data is processed to provide the service, manage event organization workflows, and ensure platform security. Legal bases are contract performance, legitimate interest, and legal obligations where applicable."
+      "title": "Finalitat i base legal",
+      "body": "Les dades es tracten per prestar el servei, gestionar l'organització de l'esdeveniment i garantir la seguretat de la plataforma. Les bases legals són l'execució del contracte, l'interès legítim i les obligacions legals quan correspongui."
     },
     "retention": {
-      "title": "Retention",
-      "body": "Data is retained only as long as necessary for the purposes above or to comply with legal obligations, then deleted or anonymized."
+      "title": "Conservació",
+      "body": "Les dades es conserven només durant el temps necessari per a les finalitats indicades o per complir obligacions legals, i després s'eliminen o s'anonimitzen."
     },
     "rights": {
-      "title": "Your rights",
-      "body": "You may request access, rectification, deletion, restriction, portability, or objection by email. You may also lodge a complaint with your national data protection authority."
+      "title": "Els vostres drets",
+      "body": "Podeu sol·licitar l'accés, la rectificació, la supressió, la limitació, la portabilitat o l'oposició per correu electrònic. També podeu presentar una reclamació davant la vostra autoritat nacional de protecció de dades."
     },
     "contact": {
-      "title": "Privacy contact"
+      "title": "Contacte de privacitat"
     }
   },
   "credits": {

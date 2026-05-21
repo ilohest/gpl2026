@@ -3,8 +3,8 @@
   <div class="flex gap-2">
     <button
       class="px-2 py-1 rounded border"
-      :class="lang === 'en' ? 'bg-black text-white' : ''"
-      @click="pick('en')"
+      :class="lang === 'ca' ? 'bg-black text-white' : ''"
+      @click="pick('ca')"
     >
       CAT
     </button>

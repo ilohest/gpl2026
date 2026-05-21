@@ -1,13 +1,32 @@
 <!-- src/components/NavBar.vue -->
 <template>
-  <header class="bg-primary text-ink text-center">
-    <nav class="mx-auto px-4 py-3 flex items-center justify-between">
+  <header v-if="usesInviteHeader" class="home-invite-nav">
+    <nav>
       <RouterLink
         to="/"
-        class="ml-4 font-heading text-3xl leading-none"
-        :aria-label="t('intro.names')"
+        class="site-logo-link"
+        :aria-label="t('header.home')"
       >
-        {{ t("intro.names") }}
+        <img
+          src="/assets/images/img3.png"
+          alt=""
+          class="site-logo"
+        />
+      </RouterLink>
+      <RouterLink to="/rsvp" class="home-invite-nav__rsvp">
+        {{ t("homepagersvp.button") }}
+      </RouterLink>
+    </nav>
+  </header>
+
+  <header v-else class="bg-primary text-ink text-center">
+    <nav class="mx-auto px-4 py-3 flex items-center justify-between">
+      <RouterLink to="/" class="site-logo-link" :aria-label="t('header.home')">
+        <img
+          src="/assets/images/img3.png"
+          alt=""
+          class="site-logo"
+        />
       </RouterLink>
 
       <!-- Burger mobile -->
@@ -42,25 +61,6 @@
             {{ t("header.rsvp") }}
           </RouterLink>
         </li>
-        <!-- Langues -->
-        <li class="ml-2 text-sm">
-          <button
-            class="hover:underline cursor-pointer"
-            :class="{ 'font-semibold': lang === 'en' }"
-            @click="setLang('en')"
-          >
-            {{ weddingConfig.i18n.languages.en.shortLabel }}
-          </button>
-          <span aria-hidden="true" class="mx-2">|</span>
-          <button
-            class="hover:underline cursor-pointer"
-            :class="{ 'font-semibold': lang === 'es' }"
-            @click="setLang('es')"
-          >
-            {{ weddingConfig.i18n.languages.es.shortLabel }}
-          </button>
-        </li>
-
         <!-- ✅ Avatar + menu compte (remplace le bouton logout) -->
         <li v-if="authed" class="ml-2">
           <button
@@ -242,31 +242,6 @@
             </div>
           </template>
 
-          <div class="h-px w-full bg-black/10 my-3"></div>
-
-          <div class="w-full flex items-center justify-center gap-4 pb-6">
-            <button
-              class="hover:underline"
-              :class="{ 'font-semibold': lang === 'en' }"
-              @click="
-                setLang('en');
-                open = false;
-              "
-            >
-              {{ weddingConfig.i18n.languages.en.shortLabel }}
-            </button>
-            <span aria-hidden="true">|</span>
-            <button
-              class="hover:underline"
-              :class="{ 'font-semibold': lang === 'es' }"
-              @click="
-                setLang('es');
-                open = false;
-              "
-            >
-              {{ weddingConfig.i18n.languages.es.shortLabel }}
-            </button>
-          </div>
         </div>
       </nav>
     </Drawer>
@@ -289,12 +264,11 @@ import { useToast } from "primevue/usetoast";
 
 import { useLang } from "@/composables/useLang";
 import { useMeStore } from "@/stores/meStore";
-import weddingConfig from "../../shared/weddingConfig.ts";
 import { api } from "@/services/api";
 
 const route = useRoute();
 const router = useRouter();
-const { lang, t, setLang, loadLanguage } = useLang();
+const { lang, t, loadLanguage } = useLang();
 const me = useMeStore();
 const toast = useToast();
 const open = ref(false);
@@ -306,6 +280,7 @@ let auth;
 const isAdmin = computed(
   () => role.value === "admin" || role.value === "superadmin",
 );
+const usesInviteHeader = computed(() => route.path === "/" || route.path === "/rsvp");
 const isSuperAdmin = computed(() => role.value === "superadmin");
 const showAdminLink = computed(() => authed.value && isAdmin.value);
 const isAdminRoute = computed(() => route.path.startsWith("/admin"));

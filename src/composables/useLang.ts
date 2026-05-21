@@ -5,12 +5,19 @@ type DictValue = unknown;
 type DictMap = Record<string, DictValue>;
 type TranslateParams = Record<string, unknown>;
 
-const currentLang = ref<string>(localStorage.getItem("lang") || "en");
+function normalizeLang(lang: unknown): string {
+  const value = String(lang || "").trim().toLowerCase();
+  if (value === "en" || value === "cat") return "ca";
+  return value || "ca";
+}
+
+const currentLang = ref<string>(normalizeLang(localStorage.getItem("lang")));
 const dict = ref<DictMap>({});
 
 async function loadLanguage(lang = currentLang.value): Promise<void> {
+  const normalizedLang = normalizeLang(lang);
   try {
-    const messages = await import(`@/locales/${lang}.json`) as { default?: DictMap };
+    const messages = await import(`@/locales/${normalizedLang}.json`) as { default?: DictMap };
     dict.value = (messages.default || {}) as DictMap;
   } catch (e) {
     console.error("i18n load error:", e);
@@ -18,11 +25,12 @@ async function loadLanguage(lang = currentLang.value): Promise<void> {
 }
 
 async function setLang(lang: string): Promise<void> {
-  currentLang.value = lang;
+  const normalizedLang = normalizeLang(lang);
+  currentLang.value = normalizedLang;
   try {
-    localStorage.setItem("lang", lang);
+    localStorage.setItem("lang", normalizedLang);
   } catch {}
-  await loadLanguage(lang);
+  await loadLanguage(normalizedLang);
 }
 
 function t(path: string, arg2?: string | TranslateParams, arg3?: TranslateParams): string {

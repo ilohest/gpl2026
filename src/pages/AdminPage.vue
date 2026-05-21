@@ -1320,7 +1320,7 @@ const countdownDays = computed(() => {
 const weddingDateLabel = computed(() => {
   if (weddingConfig?.event?.dateDisplayShort)
     return weddingConfig.event.dateDisplayShort;
-  const locale = lang.value === "en" ? "en-GB" : "es-ES";
+  const locale = lang.value === "ca" ? "ca-ES" : "es-ES";
   return weddingTargetDate.value.toLocaleDateString(locale, {
     year: "numeric",
     month: "short",
