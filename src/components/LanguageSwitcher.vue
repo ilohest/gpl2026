@@ -24,5 +24,6 @@ const { lang, setLang } = useLang();
 
 async function pick(l) {
   await setLang(l); // suffit
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>

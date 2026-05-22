@@ -103,7 +103,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref, watch } from "vue";
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { useLang } from "@/composables/useLang";
 import SafeRichText from "@/components/utils/SafeRichText.vue";
 import weddingConfig from "../../shared/weddingConfig.ts";
@@ -117,6 +117,8 @@ const spiralCanvasRef = ref(null);
 const targetDate = new Date(weddingConfig.countdown.targetDateTimeUtc);
 let countdownTimer;
 let foodTimer;
+let spiralFrame;
+let spiralScheduleId = 0;
 
 const spiralText = computed(() => {
   return t("home_invite.spiral_text").toLocaleUpperCase(lang.value);
@@ -127,12 +129,13 @@ function drawSpiral() {
   if (!canvas) return;
 
   const rect = canvas.getBoundingClientRect();
+  if (!rect.width) return;
+
   const size = Math.max(240, Math.round(rect.width));
   const isMobile = size < 360;
   const ratio = window.devicePixelRatio || 1;
   canvas.width = Math.round(size * ratio);
   canvas.height = Math.round(size * ratio);
-  canvas.style.height = `${size}px`;
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -199,6 +202,18 @@ function drawSpiral() {
   }
 }
 
+async function scheduleDrawSpiral() {
+  const scheduleId = ++spiralScheduleId;
+  cancelAnimationFrame(spiralFrame);
+  await nextTick();
+  await document.fonts?.ready;
+  if (scheduleId !== spiralScheduleId) return;
+
+  spiralFrame = requestAnimationFrame(() => {
+    if (scheduleId === spiralScheduleId) drawSpiral();
+  });
+}
+
 function renderCountdown() {
   const now = new Date();
   const diff = +targetDate - +now;
@@ -222,7 +237,7 @@ function renderCountdown() {
 
 watch(lang, () => {
   renderCountdown();
-  requestAnimationFrame(drawSpiral);
+  scheduleDrawSpiral();
 });
 
 function hideRandomFood() {
@@ -242,9 +257,8 @@ function hideRandomFood() {
 onMounted(() => {
   loadLanguage(lang.value);
   renderCountdown();
-  requestAnimationFrame(drawSpiral);
-  document.fonts?.ready.then(drawSpiral);
-  window.addEventListener("resize", drawSpiral);
+  scheduleDrawSpiral();
+  window.addEventListener("resize", scheduleDrawSpiral);
   countdownTimer = setInterval(renderCountdown, 1000);
   foodTimer = setInterval(hideRandomFood, 2000);
 });
@@ -252,6 +266,8 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(countdownTimer);
   clearInterval(foodTimer);
-  window.removeEventListener("resize", drawSpiral);
+  spiralScheduleId += 1;
+  cancelAnimationFrame(spiralFrame);
+  window.removeEventListener("resize", scheduleDrawSpiral);
 });
 </script>

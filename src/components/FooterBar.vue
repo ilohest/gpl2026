@@ -29,7 +29,7 @@
         <button
           type="button"
           :class="{ 'is-active': lang === 'ca' }"
-          @click="setLang('ca')"
+          @click="chooseLang('ca')"
         >
           CAT
         </button>
@@ -37,7 +37,7 @@
         <button
           type="button"
           :class="{ 'is-active': lang === 'es' }"
-          @click="setLang('es')"
+          @click="chooseLang('es')"
         >
           ES
         </button>
@@ -51,4 +51,9 @@ import { useLang } from "@/composables/useLang";
 import { RouterLink } from "vue-router";
 
 const { t, lang, setLang } = useLang();
+
+async function chooseLang(nextLang) {
+  await setLang(nextLang);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 </script>

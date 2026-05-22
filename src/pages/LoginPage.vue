@@ -21,6 +21,7 @@
               id="password"
               v-model="password"
               toggle-mask
+              :feedback="false"
               class="w-full"
               :input-class="'w-full custom-input'"
               :placeholder="t('login.password')"
@@ -62,17 +63,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useLang } from "@/composables/useLang";
 
-const { t } = useLang();
+const { t, setLang } = useLang();
 const router = useRouter();
 const route = useRoute();
 
 const password = ref("");
 const loading = ref(false);
 const errorMsg = ref("");
+
+onMounted(() => {
+  setLang("ca");
+});
 
 async function onSubmit(e) {
   e.preventDefault();

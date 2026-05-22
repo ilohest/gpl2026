@@ -218,17 +218,17 @@
     "button": "Back to home"
   },
   "adminlogin": {
-    "title": "Admin panel",
-    "email_label": "Email address",
-    "password_label": "Password",
-    "submit": "Log in",
-    "error_required": "Please fill in all fields."
+    "title": "Panell d'administració",
+    "email_label": "Adreça electrònica",
+    "password_label": "Contrasenya",
+    "submit": "Iniciar sessió",
+    "error_required": "Si us plau, ompliu tots els camps."
   },
   "login": {
-    "password": "Password",
-    "submit": "Log in",
-    "error_incorrect": "Incorrect password.",
-    "error_unexpected": "An unexpected error occurred."
+    "password": "Contrasenya",
+    "submit": "Entrar",
+    "error_incorrect": "Contrasenya incorrecta.",
+    "error_unexpected": "S'ha produït un error inesperat."
   },
   "access": {
     "signup_title": "Create an account",

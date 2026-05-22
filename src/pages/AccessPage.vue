@@ -37,6 +37,7 @@
               id="password"
               v-model="password"
               toggle-mask
+              :feedback="false"
               class="w-full custom-input"
               :input-class="'w-full custom-input'"
               :placeholder="t('adminlogin.password_label')"
@@ -49,6 +50,7 @@
               id="passwordConfirm"
               v-model="passwordConfirm"
               toggle-mask
+              :feedback="false"
               class="w-full custom-input"
               :input-class="'w-full custom-input'"
               :placeholder="t('access.password_confirm')"
